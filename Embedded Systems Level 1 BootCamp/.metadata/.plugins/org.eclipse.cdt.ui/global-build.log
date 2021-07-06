@@ -193,3 +193,349 @@ Info: Nothing to build for S_ALGO_01
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
 gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+11:17:18 **** Build of configuration Debug for project S_DS_01 ****
+make all 
+Building file: ../src/Stack/stack.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Stack/stack.d" -MT"src/Stack/stack.o" -o "src/Stack/stack.o" "../src/Stack/stack.c"
+make: *** [src/Stack/stack.o] Error -1073741502
+Info: Nothing to build for S_ALGO_01
+11:23:29 **** Incremental Build of configuration Debug for project S_DS_01 ****
+make all 
+Building file: ../src/Stack/stack.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Stack/stack.d" -MT"src/Stack/stack.o" -o "src/Stack/stack.o" "../src/Stack/stack.c"
+make: *** [src/Stack/stack.o] Error -1073741502
+Info: Nothing to build for S_ALGO_01
+11:23:44 **** Incremental Build of configuration Debug for project S_DS_01 ****
+make all 
+Building file: ../src/Stack/stack.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Stack/stack.d" -MT"src/Stack/stack.o" -o "src/Stack/stack.o" "../src/Stack/stack.c"
+make: *** [src/Stack/stack.o] Error -1073741502
+Info: Nothing to build for S_ALGO_01
+11:24:08 **** Incremental Build of configuration Debug for project S_DS_01 ****
+make all 
+Building file: ../src/Stack/stack.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Stack/stack.d" -MT"src/Stack/stack.o" -o "src/Stack/stack.o" "../src/Stack/stack.c"
+make: *** [src/Stack/stack.o] Error -1073741502
+Info: Nothing to build for S_ALGO_01
+11:27:08 **** Rebuild of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+In file included from ..\src\Balanced Parentheses\balancedParentheses.c:1:
+..\src\Balanced Parentheses\balancedParentheses.h:4:10: fatal error: stack.h: No such file or directory
+ #include "stack.h"
+          ^~~~~~~~~
+compilation terminated.
+Info: Nothing to build for S_ALGO_01
+11:27:21 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Stack\\stack.o" "..\\src\\Stack\\stack.c" 
+In file included from ..\src\Stack\stack.c:1:
+..\src\Stack\stack.h:9:10: fatal error: types.h: No such file or directory
+ #include "types.h"
+          ^~~~~~~~~
+compilation terminated.
+Info: Nothing to build for S_ALGO_01
+11:27:27 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Stack\\stack.o" "..\\src\\Stack\\stack.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:20:14: warning: unused variable 'result' [-Wunused-variable]
+     uint8_t *result = (uint8_t *)malloc(15);
+              ^~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_ALGO_01
+11:27:37 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_ALGO_01
+11:28:26 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+In file included from ..\src\Balanced Parentheses\balancedParentheses.c:1:
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.h:7:21: warning: pointer targets in returning 'char *' from a function with return type 'uint8_t *' {aka 'unsigned char *'} differ in signedness [-Wpointer-sign]
+ #define Not_Balance "Not Balanced"
+                     ^~~~~~~~~~~~~~
+..\src\Balanced Parentheses\balancedParentheses.c:30:24: note: in expansion of macro 'Not_Balance'
+                 return Not_Balance;
+                        ^~~~~~~~~~~
+..\src\Balanced Parentheses\balancedParentheses.c:20:14: warning: unused variable 'result' [-Wunused-variable]
+     uint8_t *result = (uint8_t *)malloc(15);
+              ^~~~~~
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_ALGO_01
+11:28:34 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:20:14: warning: unused variable 'result' [-Wunused-variable]
+     uint8_t *result = (uint8_t *)malloc(15);
+              ^~~~~~
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_ALGO_01
+11:28:45 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:20:14: warning: unused variable 'result' [-Wunused-variable]
+     uint8_t *result = (uint8_t *)malloc(15);
+              ^~~~~~
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_ALGO_01
+11:29:02 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_ALGO_01
+11:30:09 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:24:13: error: void value not ignored as it ought to be
+             push(expression[exp_index]) && (expression[exp_index] == '}' || expression[exp_index] == ')' || expression[exp_index] == ']')
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Balanced Parentheses\balancedParentheses.c:24:138: error: expected ';' before '{' token
+             push(expression[exp_index]) && (expression[exp_index] == '}' || expression[exp_index] == ')' || expression[exp_index] == ']')
+                                                                                                                                          ^
+                                                                                                                                          ;
+         {
+         ~                                                                                                                                 
+Info: Nothing to build for S_ALGO_01
+11:30:20 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:24:13: error: void value not ignored as it ought to be
+             push(expression[exp_index]) && (expression[exp_index] == '}' || expression[exp_index] == ')' || expression[exp_index] == ']'))
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Balanced Parentheses\balancedParentheses.c:24:138: error: expected ';' before ')' token
+             push(expression[exp_index]) && (expression[exp_index] == '}' || expression[exp_index] == ')' || expression[exp_index] == ']'))
+                                                                                                                                          ^
+                                                                                                                                          ;
+..\src\Balanced Parentheses\balancedParentheses.c:23:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+         if (expression[exp_index] == '{' || expression[exp_index] == '(' || expression[exp_index] == '[')
+         ^~
+..\src\Balanced Parentheses\balancedParentheses.c:24:138: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+             push(expression[exp_index]) && (expression[exp_index] == '}' || expression[exp_index] == ')' || expression[exp_index] == ']'))
+                                                                                                                                          ^
+..\src\Balanced Parentheses\balancedParentheses.c:24:138: error: expected statement before ')' token
+Info: Nothing to build for S_ALGO_01
+11:30:28 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:24:13: error: void value not ignored as it ought to be
+             push(expression[exp_index]) && (expression[exp_index] == '}' || expression[exp_index] == ')' || expression[exp_index] == ']')
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\Balanced Parentheses\balancedParentheses.c:24:138: error: expected ';' before '{' token
+             push(expression[exp_index]) && (expression[exp_index] == '}' || expression[exp_index] == ')' || expression[exp_index] == ']')
+                                                                                                                                          ^
+                                                                                                                                          ;
+         {
+         ~                                                                                                                                 
+Info: Nothing to build for S_ALGO_01
+11:30:39 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_ALGO_01
+11:32:15 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_ALGO_01
+11:35:22 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_ALGO_01
+11:37:17 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_ALGO_01
+11:37:26 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_ALGO_01
+11:37:31 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_ALGO_01
+11:37:38 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:38:19 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:28:11: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+    } else if (!(isMatching(pull(), expression[exp_index])))
+           ^~
+..\src\Balanced Parentheses\balancedParentheses.c:31:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+     return Not_Balance ;
+     ^~~~~~
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+11:38:29 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:38:51 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:39:01 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:39:08 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:39:17 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:39:39 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+11:40:35 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_DS_01
+11:40:56 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:41:03 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:48:47 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:24:8: error: 'top' undeclared (first use in this function); did you mean 'ltoa'?
+    if (top == NULL) {
+        ^~~
+        ltoa
+..\src\Balanced Parentheses\balancedParentheses.c:24:8: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Balanced Parentheses\balancedParentheses.c:45:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+11:49:06 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Stack\\stack.o" "..\\src\\Stack\\stack.c" 
+In file included from ..\src\Stack\stack.c:1:
+..\src\Stack\stack.h:11:1: error: unknown type name 'StackNode'
+ StackNode *head = NULL;
+ ^~~~~~~~~
+..\src\Stack\stack.c:4:12: error: conflicting types for 'head'
+ StackNode *head = NULL;
+            ^~~~
+In file included from ..\src\Stack\stack.c:1:
+..\src\Stack\stack.h:11:12: note: previous definition of 'head' was here
+ StackNode *head = NULL;
+            ^~~~
+11:49:44 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:24:8: error: 'top' undeclared (first use in this function); did you mean 'ltoa'?
+    if (top == NULL) {
+        ^~~
+        ltoa
+..\src\Balanced Parentheses\balancedParentheses.c:24:8: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Balanced Parentheses\balancedParentheses.c:45:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+11:49:50 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Stack\\stack.o" "..\\src\\Stack\\stack.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:24:8: error: 'top' undeclared (first use in this function); did you mean 'ltoa'?
+    if (top == NULL) {
+        ^~~
+        ltoa
+..\src\Balanced Parentheses\balancedParentheses.c:24:8: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Balanced Parentheses\balancedParentheses.c:45:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+11:50:00 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+..\src\Balanced Parentheses\balancedParentheses.c: In function 'balancedParentheses':
+..\src\Balanced Parentheses\balancedParentheses.c:36:6: error: 'top' undeclared (first use in this function); did you mean 'ltoa'?
+  if (top == NULL) {
+      ^~~
+      ltoa
+..\src\Balanced Parentheses\balancedParentheses.c:36:6: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Balanced Parentheses\balancedParentheses.c:45:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+11:50:06 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+src\S_DS_01.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/./Stack/stack.h:20: multiple definition of `head'
+src\Balanced Parentheses\balancedParentheses.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/Balanced Parentheses/../Stack/stack.h:20: first defined here
+src\Stack\stack.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/Stack/stack.h:20: multiple definition of `head'
+src\Balanced Parentheses\balancedParentheses.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/Balanced Parentheses/../Stack/stack.h:20: first defined here
+collect2.exe: error: ld returned 1 exit status
+11:50:34 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+src\S_DS_01.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/./Stack/stack.h:20: multiple definition of `head'
+src\Balanced Parentheses\balancedParentheses.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/Balanced Parentheses/../Stack/stack.h:20: first defined here
+src\Stack\stack.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/Stack/stack.h:20: multiple definition of `head'
+src\Balanced Parentheses\balancedParentheses.o:M:\Sprints\Sprints\Embedded Systems Level 1 BootCamp\S_DS_01\Debug/../src/Balanced Parentheses/../Stack/stack.h:20: first defined here
+collect2.exe: error: ld returned 1 exit status
+11:50:48 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Stack\\stack.o" "..\\src\\Stack\\stack.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+11:50:58 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_DS_01

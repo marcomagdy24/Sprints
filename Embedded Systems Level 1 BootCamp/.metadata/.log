@@ -128,3 +128,21 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
 	... 9 more
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-06 11:12:23.405
+!MESSAGE Indexed 'S_DS_01' (1 sources, 10 headers) in 0.211 sec: 875 declarations; 1,698 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-07-06 11:25:18.523
+!MESSAGE Indexed 'S_DS_01' (1 sources, 20 headers) in 0.104 sec: 2,185 declarations; 2,833 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2021-07-06 11:27:39.573
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2021-07-06 11:27:39.573
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.core.resources 4 372 2021-07-06 11:27:39.575
+!MESSAGE Resource '/S_CPP_01' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2021-07-06 11:27:39.585
+!MESSAGE Resource '/S_CP_01' is not open.
