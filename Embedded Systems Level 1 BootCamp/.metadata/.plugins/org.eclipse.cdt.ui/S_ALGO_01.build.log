@@ -1,0 +1,7 @@
+10:58:46 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+
+10:58:46 Build Finished (took 316ms)
+

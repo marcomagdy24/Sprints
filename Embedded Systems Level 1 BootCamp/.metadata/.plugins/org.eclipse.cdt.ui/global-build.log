@@ -1,0 +1,195 @@
+10:07:51 **** Rebuild of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+10:09:33 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+10:10:27 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+..\src\S_ALGO_01.c:47:19: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   printf("[INFO] %ul is not Found", key);
+                  ~^                 ~~~
+                  %lu
+..\src\S_ALGO_01.c:47:19: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   printf("[INFO] %ul is not Found", key);
+                  ~^                 ~~~
+                  %lu
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+10:10:31 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+..\src\S_ALGO_01.c:47:19: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   printf("[INFO] %u is not Found", key);
+                  ~^                ~~~
+                  %lu
+..\src\S_ALGO_01.c:47:19: warning: format '%u' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   printf("[INFO] %u is not Found", key);
+                  ~^                ~~~
+                  %lu
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+10:14:11 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+10:16:01 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+..\src\Binary Search\binary_search.c:61:9: error: conflicting types for 'binarySearch'
+ uint8_t binarySearch(uint32_t* arr, uint8_t size, uint32_t number) {
+         ^~~~~~~~~~~~
+In file included from ..\src\Binary Search\binary_search.c:8:
+..\src\Binary Search\binary_search.h:21:9: note: previous declaration of 'binarySearch' was here
+ sint8_t binarySearch(uint32_t* arr, uint8_t size, uint32_t number);
+         ^~~~~~~~~~~~
+10:16:12 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+10:17:59 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+10:32:23 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+..\src\Binary Search\binary_search.c:61:5: error: conflicting types for 'binarySearch'
+ int binarySearch(uint32_t* arr, uint8_t size, uint32_t number) {
+     ^~~~~~~~~~~~
+In file included from ..\src\Binary Search\binary_search.c:8:
+..\src\Binary Search\binary_search.h:21:9: note: previous declaration of 'binarySearch' was here
+ uint8_t binarySearch(uint32_t* arr, uint8_t size, uint32_t number);
+         ^~~~~~~~~~~~
+10:32:30 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+10:32:49 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+10:50:45 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+10:51:08 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+10:51:15 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+10:51:41 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+10:53:48 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file S_ALGO_01.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:54:23 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file S_ALGO_01.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:54:39 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file S_ALGO_01.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:54:40 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file S_ALGO_01.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:54:40 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file S_ALGO_01.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:54:40 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file S_ALGO_01.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:55:47 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file S_ALGO_01.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:57:27 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+10:58:46 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 

@@ -18,6 +18,6 @@
 
 #define bool enum{false, true}
 
-int binarySearch(uint32_t* arr, uint8_t size, uint32_t number);
+uint8_t binarySearch(uint32_t* arr, uint8_t size, uint32_t number);
 
 #endif /* BINARY_SEARCH_BINARY_SEARCH_H_ */

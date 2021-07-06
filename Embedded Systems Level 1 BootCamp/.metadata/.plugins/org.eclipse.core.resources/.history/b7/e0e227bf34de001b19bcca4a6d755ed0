@@ -25,7 +25,7 @@ int main(void) {
 //	result = binarySearch(z, n, 12);
 	uint32_t element, key;
 	uint8_t size;
-	int result;
+	sint8_t result;
 	printf("Enter no of elements: ");
 	fflush(stdout);
 	scanf("%d", &size);

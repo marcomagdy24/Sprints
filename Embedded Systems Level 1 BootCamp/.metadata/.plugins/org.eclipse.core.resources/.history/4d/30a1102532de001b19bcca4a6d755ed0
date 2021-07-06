@@ -23,9 +23,10 @@ int main(void) {
 //	uint32_t z[] = { 10, 13, 14, 15, 20, 25, 30 };
 //	n = sizeof(z) / sizeof(z[0]);
 //	result = binarySearch(z, n, 12);
-	uint32_t element, key;
+	uint32_t element;
+	sint32_t key;
 	uint8_t size;
-	int result;
+	sint8_t result;
 	printf("Enter no of elements: ");
 	fflush(stdout);
 	scanf("%d", &size);

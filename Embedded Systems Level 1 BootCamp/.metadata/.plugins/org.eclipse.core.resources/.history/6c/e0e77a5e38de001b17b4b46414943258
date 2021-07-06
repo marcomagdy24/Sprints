@@ -74,7 +74,7 @@ signed int binarySearch(uint32_t* arr, uint8_t size, uint32_t number) {
 			end = mid - 1;
 		mid = (start + end) / 2;
 	}
-//	printf("[DEBUG] Index is %d\n", index);
+	printf("[DEBUG] Index is %d\n", index);
 	return index;
 
 }
