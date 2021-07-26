@@ -26,26 +26,25 @@ int main(void)
 	UART_Init(configs);
 	UART_TransmitString((uint8_t *) "Start");
 	UART_TransmitChar('\r');
-	uint16_t* received ;
+	uint16_t received ;
 	uint8_t y[7];
 	UART_TransmitString((uint8_t *) "Received: ");
 	if (!(UART_RecieveString(y)))
 	{
 		DIO_Write_PIN(DIO_PORTB, PIN_5, HIGH);
 	}
-	UART_TransmitString((uint8_t *) "       ");
 	UART_TransmitString((uint8_t *) "Sent: ");
 	UART_TransmitString(y);
-	UART_TransmitChar('\r');
+	UART_TransmitChar(NEW_LINE);
 	/* Replace with your application code */
 	while (1)
 	{
 		UART_TransmitString((uint8_t *) "Received: ");
-		UART_RecieveChar((uint16_t *) received);
+		UART_RecieveChar(&received);
 		UART_TransmitString((uint8_t *) "       ");
 		UART_TransmitString((uint8_t *) "Sent: ");
-		UART_TransmitChar(*received);
-		UART_TransmitChar('\r');
+		UART_TransmitChar(received);
+		UART_TransmitChar(NEW_LINE);
 	}
 }
 
