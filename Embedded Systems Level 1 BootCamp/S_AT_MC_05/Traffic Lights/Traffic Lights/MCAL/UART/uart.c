@@ -177,14 +177,26 @@ UART_STATUS_t UART_RecieveChar(uint16_t * character)
 UART_STATUS_t UART_RecieveString(uint8_t *data)
 {
 	uint8_t i = 0;
-	uint8_t size = 7;
+	uint8_t size = 10;
 	
-	while (i < size - 1) {              // check space is available (including additional null char at end)
+	while (i < size - 1) {
 		uint8_t c;
-		while (! (READ_BIT(UCSRA, RXC)));  // wait for another char - WARNING this will wait forever if nothing is received
+		// wait for another char
+		while (! (READ_BIT(UCSRA, RXC)));
 		c = (uint8_t)UDR;
-		if ((c == STRING_END) || (c == '\r')) break;           // break on NULL character
-		data[i] =  (uint8_t)c;                       // write into the supplied buffer
+		// break on NULL character or new line
+		if ((c == STRING_END) || (c == NEW_LINE)) break;
+		// when backspace 
+		else if (c == BACKSPACE)
+		{
+			if (i != 0)
+			{
+				i--;
+			}
+			continue;
+		}
+		// write into the supplied buffer
+		data[i] =  (uint8_t)c;
 		i++;
 	}
 	data[i] = STRING_END;

@@ -3,31 +3,31 @@ Traffic Lights.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000728  00000000  00000000  00000094  2**1
+  0 .text         00000730  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         000000be  00800060  00000728  000007bc  2**0
+  1 .data         000000be  00800060  00000730  000007c4  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          0000000c  0080011e  0080011e  0000087a  2**0
+  2 .bss          0000000c  0080011e  0080011e  00000882  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  0000087a  2**0
+  3 .comment      00000030  00000000  00000000  00000882  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000008ac  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000008b4  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000d8  00000000  00000000  000008e8  2**0
+  5 .debug_aranges 000000d8  00000000  00000000  000008f0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   0000139f  00000000  00000000  000009c0  2**0
+  6 .debug_info   0000139f  00000000  00000000  000009c8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000008f5  00000000  00000000  00001d5f  2**0
+  7 .debug_abbrev 000008f5  00000000  00000000  00001d67  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   0000098d  00000000  00000000  00002654  2**0
+  8 .debug_line   0000099f  00000000  00000000  0000265c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000001a8  00000000  00000000  00002fe4  2**2
+  9 .debug_frame  000001a8  00000000  00000000  00002ffc  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    000007d2  00000000  00000000  0000318c  2**0
+ 10 .debug_str    000007d2  00000000  00000000  000031a4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000006dd  00000000  00000000  0000395e  2**0
+ 11 .debug_loc    000006d2  00000000  00000000  00003976  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000098  00000000  00000000  0000403b  2**0
+ 12 .debug_ranges 00000098  00000000  00000000  00004048  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -67,7 +67,7 @@ Disassembly of section .text:
   60:	11 e0       	ldi	r17, 0x01	; 1
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	e8 e2       	ldi	r30, 0x28	; 40
+  66:	e0 e3       	ldi	r30, 0x30	; 48
   68:	f7 e0       	ldi	r31, 0x07	; 7
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
@@ -90,7 +90,7 @@ Disassembly of section .text:
   82:	b2 07       	cpc	r27, r18
   84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
   86:	0e 94 34 01 	call	0x268	; 0x268 <main>
-  8a:	0c 94 92 03 	jmp	0x724	; 0x724 <_exit>
+  8a:	0c 94 96 03 	jmp	0x72c	; 0x72c <_exit>
 
 0000008e <__bad_interrupt>:
   8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -966,7 +966,7 @@ E_STATUS DIO_WritePIN(uint8_t port,EN_pins pin,uint8_t data)
  528:	72 e4       	ldi	r23, 0x42	; 66
  52a:	8f e0       	ldi	r24, 0x0F	; 15
  52c:	90 e0       	ldi	r25, 0x00	; 0
- 52e:	0e 94 70 03 	call	0x6e0	; 0x6e0 <__udivmodsi4>
+ 52e:	0e 94 74 03 	call	0x6e8	; 0x6e8 <__udivmodsi4>
  532:	ba 01       	movw	r22, r20
  534:	a9 01       	movw	r20, r18
  536:	41 50       	subi	r20, 0x01	; 1
@@ -1002,7 +1002,7 @@ E_STATUS DIO_WritePIN(uint8_t port,EN_pins pin,uint8_t data)
  57a:	72 e4       	ldi	r23, 0x42	; 66
  57c:	8f e0       	ldi	r24, 0x0F	; 15
  57e:	90 e0       	ldi	r25, 0x00	; 0
- 580:	0e 94 70 03 	call	0x6e0	; 0x6e0 <__udivmodsi4>
+ 580:	0e 94 74 03 	call	0x6e8	; 0x6e8 <__udivmodsi4>
  584:	21 50       	subi	r18, 0x01	; 1
  586:	31 09       	sbc	r19, r1
  588:	a9 01       	movw	r20, r18
@@ -1152,100 +1152,112 @@ E_STATUS DIO_WritePIN(uint8_t port,EN_pins pin,uint8_t data)
 
 UART_STATUS_t UART_RecieveString(uint8_t *data)
 {
- 6ac:	ac 01       	movw	r20, r24
+ 6ac:	bc 01       	movw	r22, r24
 	uint8_t i = 0;
- 6ae:	90 e0       	ldi	r25, 0x00	; 0
-	uint8_t size = 7;
+ 6ae:	20 e0       	ldi	r18, 0x00	; 0
+	uint8_t size = 10;
 	
-	while (i < size - 1) {              // check space is available (including additional null char at end)
- 6b0:	0c c0       	rjmp	.+24     	; 0x6ca <UART_RecieveString+0x1e>
+	while (i < size - 1) {
+ 6b0:	10 c0       	rjmp	.+32     	; 0x6d2 <UART_RecieveString+0x26>
 		uint8_t c;
-		while (! (READ_BIT(UCSRA, RXC)));  // wait for another char - WARNING this will wait forever if nothing is received
+		// wait for another char
+		while (! (READ_BIT(UCSRA, RXC)));
  6b2:	5f 9b       	sbis	0x0b, 7	; 11
  6b4:	fe cf       	rjmp	.-4      	; 0x6b2 <UART_RecieveString+0x6>
 		c = (uint8_t)UDR;
- 6b6:	2c b1       	in	r18, 0x0c	; 12
-		if ((c == STRING_END) || (c == '\r')) break;           // break on NULL character
- 6b8:	22 23       	and	r18, r18
- 6ba:	61 f0       	breq	.+24     	; 0x6d4 <UART_RecieveString+0x28>
- 6bc:	2d 30       	cpi	r18, 0x0D	; 13
- 6be:	51 f0       	breq	.+20     	; 0x6d4 <UART_RecieveString+0x28>
-		data[i] =  (uint8_t)c;                       // write into the supplied buffer
- 6c0:	fa 01       	movw	r30, r20
- 6c2:	e9 0f       	add	r30, r25
- 6c4:	f1 1d       	adc	r31, r1
- 6c6:	20 83       	st	Z, r18
+ 6b6:	9c b1       	in	r25, 0x0c	; 12
+		// break on NULL character
+		if ((c == STRING_END) || (c == NEW_LINE)) break;
+ 6b8:	99 23       	and	r25, r25
+ 6ba:	81 f0       	breq	.+32     	; 0x6dc <UART_RecieveString+0x30>
+ 6bc:	9d 30       	cpi	r25, 0x0D	; 13
+ 6be:	71 f0       	breq	.+28     	; 0x6dc <UART_RecieveString+0x30>
+		else if (c == BACKSPACE)
+ 6c0:	98 30       	cpi	r25, 0x08	; 8
+ 6c2:	11 f4       	brne	.+4      	; 0x6c8 <UART_RecieveString+0x1c>
+		{
+			i--;
+ 6c4:	21 50       	subi	r18, 0x01	; 1
+			continue;
+ 6c6:	05 c0       	rjmp	.+10     	; 0x6d2 <UART_RecieveString+0x26>
+		}
+		// write into the supplied buffer
+		data[i] =  (uint8_t)c;
+ 6c8:	fb 01       	movw	r30, r22
+ 6ca:	e2 0f       	add	r30, r18
+ 6cc:	f1 1d       	adc	r31, r1
+ 6ce:	90 83       	st	Z, r25
 		i++;
- 6c8:	9f 5f       	subi	r25, 0xFF	; 255
+ 6d0:	2f 5f       	subi	r18, 0xFF	; 255
 UART_STATUS_t UART_RecieveString(uint8_t *data)
 {
 	uint8_t i = 0;
-	uint8_t size = 7;
+	uint8_t size = 10;
 	
-	while (i < size - 1) {              // check space is available (including additional null char at end)
- 6ca:	29 2f       	mov	r18, r25
- 6cc:	30 e0       	ldi	r19, 0x00	; 0
- 6ce:	26 30       	cpi	r18, 0x06	; 6
- 6d0:	31 05       	cpc	r19, r1
- 6d2:	7c f3       	brlt	.-34     	; 0x6b2 <UART_RecieveString+0x6>
-		c = (uint8_t)UDR;
-		if ((c == STRING_END) || (c == '\r')) break;           // break on NULL character
-		data[i] =  (uint8_t)c;                       // write into the supplied buffer
+	while (i < size - 1) {
+ 6d2:	42 2f       	mov	r20, r18
+ 6d4:	50 e0       	ldi	r21, 0x00	; 0
+ 6d6:	49 30       	cpi	r20, 0x09	; 9
+ 6d8:	51 05       	cpc	r21, r1
+ 6da:	5c f3       	brlt	.-42     	; 0x6b2 <UART_RecieveString+0x6>
+		}
+		// write into the supplied buffer
+		data[i] =  (uint8_t)c;
 		i++;
 	}
 	data[i] = STRING_END;
- 6d4:	fa 01       	movw	r30, r20
- 6d6:	e9 0f       	add	r30, r25
- 6d8:	f1 1d       	adc	r31, r1
- 6da:	10 82       	st	Z, r1
+ 6dc:	fb 01       	movw	r30, r22
+ 6de:	e2 0f       	add	r30, r18
+ 6e0:	f1 1d       	adc	r31, r1
+ 6e2:	10 82       	st	Z, r1
 	//return the received string
 	return UART_SUCCESS;
 }
- 6dc:	80 e0       	ldi	r24, 0x00	; 0
- 6de:	08 95       	ret
+ 6e4:	80 e0       	ldi	r24, 0x00	; 0
+ 6e6:	08 95       	ret
 
-000006e0 <__udivmodsi4>:
- 6e0:	a1 e2       	ldi	r26, 0x21	; 33
- 6e2:	1a 2e       	mov	r1, r26
- 6e4:	aa 1b       	sub	r26, r26
- 6e6:	bb 1b       	sub	r27, r27
- 6e8:	fd 01       	movw	r30, r26
- 6ea:	0d c0       	rjmp	.+26     	; 0x706 <__udivmodsi4_ep>
+000006e8 <__udivmodsi4>:
+ 6e8:	a1 e2       	ldi	r26, 0x21	; 33
+ 6ea:	1a 2e       	mov	r1, r26
+ 6ec:	aa 1b       	sub	r26, r26
+ 6ee:	bb 1b       	sub	r27, r27
+ 6f0:	fd 01       	movw	r30, r26
+ 6f2:	0d c0       	rjmp	.+26     	; 0x70e <__udivmodsi4_ep>
 
-000006ec <__udivmodsi4_loop>:
- 6ec:	aa 1f       	adc	r26, r26
- 6ee:	bb 1f       	adc	r27, r27
- 6f0:	ee 1f       	adc	r30, r30
- 6f2:	ff 1f       	adc	r31, r31
- 6f4:	a2 17       	cp	r26, r18
- 6f6:	b3 07       	cpc	r27, r19
- 6f8:	e4 07       	cpc	r30, r20
- 6fa:	f5 07       	cpc	r31, r21
- 6fc:	20 f0       	brcs	.+8      	; 0x706 <__udivmodsi4_ep>
- 6fe:	a2 1b       	sub	r26, r18
- 700:	b3 0b       	sbc	r27, r19
- 702:	e4 0b       	sbc	r30, r20
- 704:	f5 0b       	sbc	r31, r21
+000006f4 <__udivmodsi4_loop>:
+ 6f4:	aa 1f       	adc	r26, r26
+ 6f6:	bb 1f       	adc	r27, r27
+ 6f8:	ee 1f       	adc	r30, r30
+ 6fa:	ff 1f       	adc	r31, r31
+ 6fc:	a2 17       	cp	r26, r18
+ 6fe:	b3 07       	cpc	r27, r19
+ 700:	e4 07       	cpc	r30, r20
+ 702:	f5 07       	cpc	r31, r21
+ 704:	20 f0       	brcs	.+8      	; 0x70e <__udivmodsi4_ep>
+ 706:	a2 1b       	sub	r26, r18
+ 708:	b3 0b       	sbc	r27, r19
+ 70a:	e4 0b       	sbc	r30, r20
+ 70c:	f5 0b       	sbc	r31, r21
 
-00000706 <__udivmodsi4_ep>:
- 706:	66 1f       	adc	r22, r22
- 708:	77 1f       	adc	r23, r23
- 70a:	88 1f       	adc	r24, r24
- 70c:	99 1f       	adc	r25, r25
- 70e:	1a 94       	dec	r1
- 710:	69 f7       	brne	.-38     	; 0x6ec <__udivmodsi4_loop>
- 712:	60 95       	com	r22
- 714:	70 95       	com	r23
- 716:	80 95       	com	r24
- 718:	90 95       	com	r25
- 71a:	9b 01       	movw	r18, r22
- 71c:	ac 01       	movw	r20, r24
- 71e:	bd 01       	movw	r22, r26
- 720:	cf 01       	movw	r24, r30
- 722:	08 95       	ret
+0000070e <__udivmodsi4_ep>:
+ 70e:	66 1f       	adc	r22, r22
+ 710:	77 1f       	adc	r23, r23
+ 712:	88 1f       	adc	r24, r24
+ 714:	99 1f       	adc	r25, r25
+ 716:	1a 94       	dec	r1
+ 718:	69 f7       	brne	.-38     	; 0x6f4 <__udivmodsi4_loop>
+ 71a:	60 95       	com	r22
+ 71c:	70 95       	com	r23
+ 71e:	80 95       	com	r24
+ 720:	90 95       	com	r25
+ 722:	9b 01       	movw	r18, r22
+ 724:	ac 01       	movw	r20, r24
+ 726:	bd 01       	movw	r22, r26
+ 728:	cf 01       	movw	r24, r30
+ 72a:	08 95       	ret
 
-00000724 <_exit>:
- 724:	f8 94       	cli
+0000072c <_exit>:
+ 72c:	f8 94       	cli
 
-00000726 <__stop_program>:
- 726:	ff cf       	rjmp	.-2      	; 0x726 <__stop_program>
+0000072e <__stop_program>:
+ 72e:	ff cf       	rjmp	.-2      	; 0x72e <__stop_program>

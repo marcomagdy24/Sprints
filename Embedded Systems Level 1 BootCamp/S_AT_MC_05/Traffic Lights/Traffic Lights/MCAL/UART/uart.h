@@ -26,7 +26,9 @@
 #define NOT_INIT                          (uint8_t)(0)
 #define INIT                              (uint8_t)(1)
 #define STRING_START                      (uint8_t)(0)
-#define STRING_END								(uint8_t)(0)
+#define STRING_END								(uint8_t)('\0')
+#define NEW_LINE									(uint8_t)('\r')
+#define BACKSPACE									(uint8_t)('\b')
 #define STRING_MAX_CHAR                   (uint8_t)(200)
 /******************************************************************************
 *                                     typedef enum                            *

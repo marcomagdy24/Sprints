@@ -28,6 +28,7 @@
 #define AT_MESSAGE					  (uint8_t* )("AT")
 #define OK_TERMINAL_MESSAGE		  (uint8_t* )("[REPLY] OK\r")
 #define INVALID_TERMINAL_MESSAGE	  (uint8_t* )("[INFO] Invalid message\r")
+
 /******************************************************************************
 *                               FUNCTION DECLARATIONS                         *
 *******************************************************************************/
