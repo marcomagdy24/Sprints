@@ -10,7 +10,7 @@
 int main(void)
 {
     I2C_Master_Init();
-	 I2C_Master_Update();
+    I2C_Master_Update();
     while (1) 
     {
     }
