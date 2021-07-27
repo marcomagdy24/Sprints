@@ -3,31 +3,31 @@ SPI Master.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000021e  00000000  00000000  00000094  2**1
+  0 .text         0000021a  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000008  00800060  0000021e  000002b2  2**0
+  1 .data         00000008  00800060  0000021a  000002ae  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000008  00800068  00800068  000002ba  2**0
+  2 .bss          00000008  00800068  00800068  000002b6  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  000002ba  2**0
+  3 .comment      00000030  00000000  00000000  000002b6  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002ec  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002e8  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000088  00000000  00000000  00000328  2**0
+  5 .debug_aranges 00000088  00000000  00000000  00000324  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00000d0f  00000000  00000000  000003b0  2**0
+  6 .debug_info   00000d47  00000000  00000000  000003ac  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000007a8  00000000  00000000  000010bf  2**0
+  7 .debug_abbrev 000007cf  00000000  00000000  000010f3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000005b5  00000000  00000000  00001867  2**0
+  8 .debug_line   000005f7  00000000  00000000  000018c2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  000000f0  00000000  00000000  00001e1c  2**2
+  9 .debug_frame  000000f4  00000000  00000000  00001ebc  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000069a  00000000  00000000  00001f0c  2**0
+ 10 .debug_str    0000069a  00000000  00000000  00001fb0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000001e9  00000000  00000000  000025a6  2**0
+ 11 .debug_loc    00000236  00000000  00000000  0000264a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000058  00000000  00000000  0000278f  2**0
+ 12 .debug_ranges 00000058  00000000  00000000  00002880  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -67,7 +67,7 @@ Disassembly of section .text:
   60:	10 e0       	ldi	r17, 0x00	; 0
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	ee e1       	ldi	r30, 0x1E	; 30
+  66:	ea e1       	ldi	r30, 0x1A	; 26
   68:	f2 e0       	ldi	r31, 0x02	; 2
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
@@ -90,7 +90,7 @@ Disassembly of section .text:
   82:	b2 07       	cpc	r27, r18
   84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
   86:	0e 94 88 00 	call	0x110	; 0x110 <main>
-  8a:	0c 94 0d 01 	jmp	0x21a	; 0x21a <_exit>
+  8a:	0c 94 0b 01 	jmp	0x216	; 0x216 <_exit>
 
 0000008e <__bad_interrupt>:
   8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -463,21 +463,18 @@ SPI_STATUS_t SPI_Init(ST_SPI_CONFIG_t config)
 
 SPI_STATUS_t SPI_TransmitChar(uint8_t data)
 {
-	while ((READ_BIT(SPSR, WCOL)));
- 20c:	76 99       	sbic	0x0e, 6	; 14
- 20e:	fe cf       	rjmp	.-4      	; 0x20c <SPI_TransmitChar>
 	SPDR = data;
- 210:	8f b9       	out	0x0f, r24	; 15
+ 20c:	8f b9       	out	0x0f, r24	; 15
 	while (! (READ_BIT(SPSR, SPIF)));
- 212:	77 9b       	sbis	0x0e, 7	; 14
- 214:	fe cf       	rjmp	.-4      	; 0x212 <SPI_TransmitChar+0x6>
+ 20e:	77 9b       	sbis	0x0e, 7	; 14
+ 210:	fe cf       	rjmp	.-4      	; 0x20e <SPI_TransmitChar+0x2>
 	return SPI_SUCCESS;
 }
- 216:	80 e0       	ldi	r24, 0x00	; 0
- 218:	08 95       	ret
+ 212:	80 e0       	ldi	r24, 0x00	; 0
+ 214:	08 95       	ret
 
-0000021a <_exit>:
- 21a:	f8 94       	cli
+00000216 <_exit>:
+ 216:	f8 94       	cli
 
-0000021c <__stop_program>:
- 21c:	ff cf       	rjmp	.-2      	; 0x21c <__stop_program>
+00000218 <__stop_program>:
+ 218:	ff cf       	rjmp	.-2      	; 0x218 <__stop_program>

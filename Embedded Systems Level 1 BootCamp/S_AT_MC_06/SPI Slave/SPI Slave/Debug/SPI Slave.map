@@ -50,9 +50,9 @@ Discarded input sections
  .text.SPI_TransmitChar
                 0x00000000        0xa MCAL/SPI/SPI.o
  .text.SPI_TransmitString
-                0x00000000       0x18 MCAL/SPI/SPI.o
+                0x00000000       0x2e MCAL/SPI/SPI.o
  .text.SPI_RecieveString
-                0x00000000        0x4 MCAL/SPI/SPI.o
+                0x00000000       0x26 MCAL/SPI/SPI.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -441,32 +441,32 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xd15
+.debug_info     0x00000000      0xd4d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x3d4 APP/SPI_SLAVE/slave.o
  .debug_info    0x000008ba      0x143 main.o
- .debug_info    0x000009fd      0x318 MCAL/SPI/SPI.o
+ .debug_info    0x000009fd      0x350 MCAL/SPI/SPI.o
 
-.debug_abbrev   0x00000000      0x7a2
+.debug_abbrev   0x00000000      0x7c9
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_abbrev  0x000004a3      0x15b APP/SPI_SLAVE/slave.o
  .debug_abbrev  0x000005fe       0xc9 main.o
- .debug_abbrev  0x000006c7       0xdb MCAL/SPI/SPI.o
+ .debug_abbrev  0x000006c7      0x102 MCAL/SPI/SPI.o
 
-.debug_line     0x00000000      0x570
+.debug_line     0x00000000      0x5bc
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000116      0x18a APP/SPI_SLAVE/slave.o
  .debug_line    0x000002a0       0xd4 main.o
- .debug_line    0x00000374      0x1fc MCAL/SPI/SPI.o
+ .debug_line    0x00000374      0x248 MCAL/SPI/SPI.o
 
-.debug_frame    0x00000000       0xf4
+.debug_frame    0x00000000       0xf8
  *(.debug_frame)
  .debug_frame   0x00000000       0x50 APP/SPI_SLAVE/slave.o
  .debug_frame   0x00000050       0x24 main.o
- .debug_frame   0x00000074       0x80 MCAL/SPI/SPI.o
+ .debug_frame   0x00000074       0x84 MCAL/SPI/SPI.o
 
 .debug_str      0x00000000      0x69d
  *(.debug_str)
@@ -478,10 +478,10 @@ END GROUP
  .debug_str     0x00000631       0x6c MCAL/SPI/SPI.o
                                 0x42f (size before relaxing)
 
-.debug_loc      0x00000000      0x1d7
+.debug_loc      0x00000000      0x224
  *(.debug_loc)
  .debug_loc     0x00000000       0xbe APP/SPI_SLAVE/slave.o
- .debug_loc     0x000000be      0x119 MCAL/SPI/SPI.o
+ .debug_loc     0x000000be      0x166 MCAL/SPI/SPI.o
 
 .debug_macinfo
  *(.debug_macinfo)

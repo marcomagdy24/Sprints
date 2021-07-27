@@ -99,7 +99,6 @@ SPI_STATUS_t SPI_Init(ST_SPI_CONFIG_t config)
 
 SPI_STATUS_t SPI_TransmitChar(uint8_t data)
 {
-	while ((READ_BIT(SPSR, WCOL)));
 	SPDR = data;
 	while (! (READ_BIT(SPSR, SPIF)));
 	return SPI_SUCCESS;
@@ -107,11 +106,15 @@ SPI_STATUS_t SPI_TransmitChar(uint8_t data)
 
 SPI_STATUS_t SPI_TransmitString(uint8_t *data)
 {
-	while (*data != STRING_END)
-	{
-		SPI_TransmitChar(*data);
-	}
+	uint8_t j = STRING_START;
 	
+	while (data[j]!= STRING_END)		/* Send string till null */
+	{
+		SPI_TransmitChar(data[j]);
+		j++;
+	}
+	data[j] = STRING_END;
+	SPI_TransmitChar(data[j]);
 	return SPI_SUCCESS;
 }
 
@@ -125,6 +128,21 @@ SPI_STATUS_t SPI_RecieveChar(uint8_t * data)
 
 SPI_STATUS_t SPI_RecieveString(uint8_t *data)
 {
+	uint8_t i = 0;
 	
+	while (1) {
+		uint8_t c;
+		// wait for another char
+		while (! (READ_BIT(SPSR, SPIF)));
+		c = (uint8_t)SPDR;
+		// break on NULL character or new line
+		if (c == STRING_END) break;
+		// when backspace
+		
+		// write into the supplied buffer
+		data[i] =  (uint8_t)c;
+		i++;
+	}
+	data[i] = STRING_END;
 	return SPI_SUCCESS;
 }
