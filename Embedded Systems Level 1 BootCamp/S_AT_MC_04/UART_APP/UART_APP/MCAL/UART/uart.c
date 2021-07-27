@@ -39,7 +39,7 @@ void char_bits(uint8_t bits_no)
 /******************************************************************************
 *                         APIS IMPLEMENTATION											*
 *******************************************************************************/
-UART_STATUS UART_Init(ST_UART_CONFIG_t config)
+UART_STATUS_t UART_Init(ST_UART_CONFIG_t config)
 {
 	g_ST_UART_CONFIG_t = config;
 	uint32_t UBRR_VAL;
@@ -135,7 +135,7 @@ UART_STATUS UART_Init(ST_UART_CONFIG_t config)
 	return UART_SUCCESS;
 }
 
-UART_STATUS UART_TransmitChar(uint16_t data)
+UART_STATUS_t UART_TransmitChar(uint16_t data)
 {
 	while (! (READ_BIT(UCSRA, UDRE)));
 	if (g_ST_UART_CONFIG_t.CHAR_BITS == UART_9_Bit_CHAR)
@@ -147,7 +147,7 @@ UART_STATUS UART_TransmitChar(uint16_t data)
 	return UART_SUCCESS;
 }
 
-UART_STATUS UART_TransmitString(uint8_t *data)
+UART_STATUS_t UART_TransmitString(uint8_t *data)
 {
 	uint8_t j = STRING_START;
 	
@@ -156,11 +156,11 @@ UART_STATUS UART_TransmitString(uint8_t *data)
 		UART_TransmitChar(data[j]);
 		j++;
 	}
-	
+	data[j] = STRING_END;
 	return UART_SUCCESS;
 }
 
-UART_STATUS UART_RecieveChar(uint16_t * character)
+UART_STATUS_t UART_RecieveChar(uint16_t * character)
 {
 	while (! (READ_BIT(UCSRA, RXC)));
 	if (g_ST_UART_CONFIG_t.CHAR_BITS == UART_9_Bit_CHAR)
@@ -174,21 +174,24 @@ UART_STATUS UART_RecieveChar(uint16_t * character)
 	return UART_SUCCESS;
 }
 
-UART_STATUS UART_RecieveString(uint8_t *data)
+UART_STATUS_t UART_RecieveString(uint8_t *data)
 {
 	uint8_t i = 0;
-	uint8_t size = 10;
 	
-	while (i < size - 1) {
+	while (1) {
 		uint8_t c;
 		// wait for another char
 		while (! (READ_BIT(UCSRA, RXC)));
 		c = (uint8_t)UDR;
-		// break on NULL character
+		// break on NULL character or new line
+		// when backspace
 		if ((c == STRING_END) || (c == NEW_LINE)) break;
 		else if (c == BACKSPACE)
 		{
-			i--;
+			if (i != 0)
+			{
+				i--;
+			}
 			continue;
 		}
 		// write into the supplied buffer

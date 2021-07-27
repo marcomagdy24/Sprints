@@ -15,13 +15,12 @@
 #include "../../Infrastructure/registers.h"
 #include "../../Infrastructure/uart_registers.h"
 #include "../../Infrastructure/utils.h"
-#include "../../Infrastructure/types.h"
 #include "uartRetval.h"
 
 /******************************************************************************
 *                              CONSTANTS													*
 *******************************************************************************/
-#define F_CPU 8000000UL
+#define F_CPU 1000000UL
 #define UART_BAUD		  1200
 #define MAX_BAUD_RATE  4095
 #define NOT_INIT                          (uint8_t)(0)
@@ -107,10 +106,10 @@ typedef struct
 /******************************************************************************
 *                               FUNCTION DECLARATIONS                         *
 *******************************************************************************/
-UART_STATUS UART_Init(ST_UART_CONFIG_t config);
-UART_STATUS UART_TransmitChar(uint16_t data);
-UART_STATUS UART_TransmitString(uint8_t *data);
-UART_STATUS UART_RecieveChar(uint16_t * data);
-UART_STATUS UART_RecieveString(uint8_t * data);
+UART_STATUS_t UART_Init(ST_UART_CONFIG_t config);
+UART_STATUS_t UART_TransmitChar(uint16_t data);
+UART_STATUS_t UART_TransmitString(uint8_t *data);
+UART_STATUS_t UART_RecieveChar(uint16_t * data);
+UART_STATUS_t UART_RecieveString(uint8_t * data);
 
 #endif /* UART_H_ */

@@ -27,7 +27,7 @@ int main(void)
 	UART_TransmitString((uint8_t *) "Start");
 	UART_TransmitChar('\r');
 	uint16_t received ;
-	uint8_t y[7];
+	uint8_t y[10];
 	UART_TransmitString((uint8_t *) "Received: ");
 	if (!(UART_RecieveString(y)))
 	{

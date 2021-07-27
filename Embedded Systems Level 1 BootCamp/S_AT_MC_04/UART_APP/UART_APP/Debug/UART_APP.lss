@@ -3,31 +3,31 @@ UART_APP.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000654  00000000  00000000  00000094  2**1
+  0 .text         00000650  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         0000002c  00800060  00000654  000006e8  2**0
+  1 .data         0000002c  00800060  00000650  000006e4  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          0000000c  0080008c  0080008c  00000714  2**0
+  2 .bss          0000000c  0080008c  0080008c  00000710  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000714  2**0
+  3 .comment      00000030  00000000  00000000  00000710  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000744  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000740  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000a8  00000000  00000000  00000780  2**0
+  5 .debug_aranges 000000a8  00000000  00000000  0000077c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000010c8  00000000  00000000  00000828  2**0
+  6 .debug_info   000010ba  00000000  00000000  00000824  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000007ea  00000000  00000000  000018f0  2**0
+  7 .debug_abbrev 000007ea  00000000  00000000  000018de  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000007b3  00000000  00000000  000020da  2**0
+  8 .debug_line   000007b3  00000000  00000000  000020c8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000140  00000000  00000000  00002890  2**2
+  9 .debug_frame  00000140  00000000  00000000  0000287c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000076b  00000000  00000000  000029d0  2**0
+ 10 .debug_str    00000768  00000000  00000000  000029bc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000605  00000000  00000000  0000313b  2**0
+ 11 .debug_loc    000005f2  00000000  00000000  00003124  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000078  00000000  00000000  00003740  2**0
+ 12 .debug_ranges 00000078  00000000  00000000  00003716  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -67,7 +67,7 @@ Disassembly of section .text:
   60:	10 e0       	ldi	r17, 0x00	; 0
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	e4 e5       	ldi	r30, 0x54	; 84
+  66:	e0 e5       	ldi	r30, 0x50	; 80
   68:	f6 e0       	ldi	r31, 0x06	; 6
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
@@ -90,7 +90,7 @@ Disassembly of section .text:
   82:	b2 07       	cpc	r27, r18
   84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
   86:	0e 94 49 00 	call	0x92	; 0x92 <main>
-  8a:	0c 94 28 03 	jmp	0x650	; 0x650 <_exit>
+  8a:	0c 94 26 03 	jmp	0x64c	; 0x64c <_exit>
 
 0000008e <__bad_interrupt>:
   8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -106,7 +106,7 @@ int main(void)
   94:	df 93       	push	r29
   96:	cd b7       	in	r28, 0x3d	; 61
   98:	de b7       	in	r29, 0x3e	; 62
-  9a:	68 97       	sbiw	r28, 0x18	; 24
+  9a:	6b 97       	sbiw	r28, 0x1b	; 27
   9c:	0f b6       	in	r0, 0x3f	; 63
   9e:	f8 94       	cli
   a0:	de bf       	out	0x3e, r29	; 62
@@ -160,7 +160,7 @@ int main(void)
   f0:	90 e0       	ldi	r25, 0x00	; 0
   f2:	0e 94 ab 02 	call	0x556	; 0x556 <UART_TransmitChar>
 	uint16_t received ;
-	uint8_t y[7];
+	uint8_t y[10];
 	UART_TransmitString((uint8_t *) "Received: ");
   f6:	82 e7       	ldi	r24, 0x72	; 114
   f8:	90 e0       	ldi	r25, 0x00	; 0
@@ -168,7 +168,7 @@ int main(void)
 	if (!(UART_RecieveString(y)))
   fe:	ce 01       	movw	r24, r28
  100:	42 96       	adiw	r24, 0x12	; 18
- 102:	0e 94 e8 02 	call	0x5d0	; 0x5d0 <UART_RecieveString>
+ 102:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <UART_RecieveString>
  106:	81 11       	cpse	r24, r1
  108:	05 c0       	rjmp	.+10     	; 0x114 <main+0x82>
 	{
@@ -200,7 +200,7 @@ int main(void)
 		UART_RecieveChar(&received);
  134:	ce 01       	movw	r24, r28
  136:	40 96       	adiw	r24, 0x10	; 16
- 138:	0e 94 cc 02 	call	0x598	; 0x598 <UART_RecieveChar>
+ 138:	0e 94 cd 02 	call	0x59a	; 0x59a <UART_RecieveChar>
 		UART_TransmitString((uint8_t *) "       ");
  13c:	84 e8       	ldi	r24, 0x84	; 132
  13e:	90 e0       	ldi	r25, 0x00	; 0
@@ -707,7 +707,7 @@ void char_bits(uint8_t bits_no)
 /******************************************************************************
 *                         APIS IMPLEMENTATION											*
 *******************************************************************************/
-UART_STATUS UART_Init(ST_UART_CONFIG_t config)
+UART_STATUS_t UART_Init(ST_UART_CONFIG_t config)
 {
  382:	ef 92       	push	r14
  384:	ff 92       	push	r15
@@ -783,11 +783,11 @@ UART_STATUS UART_Init(ST_UART_CONFIG_t config)
  40c:	33 1f       	adc	r19, r19
  40e:	44 1f       	adc	r20, r20
  410:	55 1f       	adc	r21, r21
- 412:	60 e0       	ldi	r22, 0x00	; 0
- 414:	72 e1       	ldi	r23, 0x12	; 18
- 416:	8a e7       	ldi	r24, 0x7A	; 122
+ 412:	60 e4       	ldi	r22, 0x40	; 64
+ 414:	72 e4       	ldi	r23, 0x42	; 66
+ 416:	8f e0       	ldi	r24, 0x0F	; 15
  418:	90 e0       	ldi	r25, 0x00	; 0
- 41a:	0e 94 06 03 	call	0x60c	; 0x60c <__udivmodsi4>
+ 41a:	0e 94 04 03 	call	0x608	; 0x608 <__udivmodsi4>
  41e:	ba 01       	movw	r22, r20
  420:	a9 01       	movw	r20, r18
  422:	41 50       	subi	r20, 0x01	; 1
@@ -824,11 +824,11 @@ UART_STATUS UART_Init(ST_UART_CONFIG_t config)
  45e:	33 1f       	adc	r19, r19
  460:	44 1f       	adc	r20, r20
  462:	55 1f       	adc	r21, r21
- 464:	60 e0       	ldi	r22, 0x00	; 0
- 466:	72 e1       	ldi	r23, 0x12	; 18
- 468:	8a e7       	ldi	r24, 0x7A	; 122
+ 464:	60 e4       	ldi	r22, 0x40	; 64
+ 466:	72 e4       	ldi	r23, 0x42	; 66
+ 468:	8f e0       	ldi	r24, 0x0F	; 15
  46a:	90 e0       	ldi	r25, 0x00	; 0
- 46c:	0e 94 06 03 	call	0x60c	; 0x60c <__udivmodsi4>
+ 46c:	0e 94 04 03 	call	0x608	; 0x608 <__udivmodsi4>
  470:	21 50       	subi	r18, 0x01	; 1
  472:	31 09       	sbc	r19, r1
  474:	a9 01       	movw	r20, r18
@@ -1068,7 +1068,7 @@ UART_STATUS UART_Init(ST_UART_CONFIG_t config)
 
 00000556 <UART_TransmitChar>:
 
-UART_STATUS UART_TransmitChar(uint16_t data)
+UART_STATUS_t UART_TransmitChar(uint16_t data)
 {
 	while (! (READ_BIT(UCSRA, UDRE)));
  556:	5d 9b       	sbis	0x0b, 5	; 11
@@ -1094,7 +1094,7 @@ UART_STATUS UART_TransmitChar(uint16_t data)
 
 00000570 <UART_TransmitString>:
 
-UART_STATUS UART_TransmitString(uint8_t *data)
+UART_STATUS_t UART_TransmitString(uint8_t *data)
 {
  570:	0f 93       	push	r16
  572:	1f 93       	push	r17
@@ -1112,7 +1112,7 @@ UART_STATUS UART_TransmitString(uint8_t *data)
 		j++;
  582:	cf 5f       	subi	r28, 0xFF	; 255
 
-UART_STATUS UART_TransmitString(uint8_t *data)
+UART_STATUS_t UART_TransmitString(uint8_t *data)
 {
 	uint8_t j = STRING_START;
 	
@@ -1123,170 +1123,162 @@ UART_STATUS UART_TransmitString(uint8_t *data)
  58a:	80 81       	ld	r24, Z
  58c:	81 11       	cpse	r24, r1
  58e:	f6 cf       	rjmp	.-20     	; 0x57c <UART_TransmitString+0xc>
+	{
 		UART_TransmitChar(data[j]);
 		j++;
 	}
-	
+	data[j] = STRING_END;
+ 590:	10 82       	st	Z, r1
 	return UART_SUCCESS;
 }
- 590:	cf 91       	pop	r28
- 592:	1f 91       	pop	r17
- 594:	0f 91       	pop	r16
- 596:	08 95       	ret
+ 592:	cf 91       	pop	r28
+ 594:	1f 91       	pop	r17
+ 596:	0f 91       	pop	r16
+ 598:	08 95       	ret
 
-00000598 <UART_RecieveChar>:
+0000059a <UART_RecieveChar>:
 
-UART_STATUS UART_RecieveChar(uint16_t * character)
+UART_STATUS_t UART_RecieveChar(uint16_t * character)
 {
- 598:	fc 01       	movw	r30, r24
+ 59a:	fc 01       	movw	r30, r24
 	while (! (READ_BIT(UCSRA, RXC)));
- 59a:	5f 9b       	sbis	0x0b, 7	; 11
- 59c:	fe cf       	rjmp	.-4      	; 0x59a <UART_RecieveChar+0x2>
+ 59c:	5f 9b       	sbis	0x0b, 7	; 11
+ 59e:	fe cf       	rjmp	.-4      	; 0x59c <UART_RecieveChar+0x2>
 	if (g_ST_UART_CONFIG_t.CHAR_BITS == UART_9_Bit_CHAR)
- 59e:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <__data_end+0x7>
- 5a2:	84 30       	cpi	r24, 0x04	; 4
- 5a4:	79 f4       	brne	.+30     	; 0x5c4 <UART_RecieveChar+0x2c>
+ 5a0:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <__data_end+0x7>
+ 5a4:	84 30       	cpi	r24, 0x04	; 4
+ 5a6:	79 f4       	brne	.+30     	; 0x5c6 <UART_RecieveChar+0x2c>
 	{
 		while ((UCSRA) & ((1<<FE)|(1<<DOR)|(1<<PE)));
- 5a6:	9b b1       	in	r25, 0x0b	; 11
- 5a8:	9c 71       	andi	r25, 0x1C	; 28
- 5aa:	e9 f7       	brne	.-6      	; 0x5a6 <UART_RecieveChar+0xe>
+ 5a8:	9b b1       	in	r25, 0x0b	; 11
+ 5aa:	9c 71       	andi	r25, 0x1C	; 28
+ 5ac:	e9 f7       	brne	.-6      	; 0x5a8 <UART_RecieveChar+0xe>
 		UCSRB = (UCSRB >> 1) & 0x01;
- 5ac:	8a b1       	in	r24, 0x0a	; 10
- 5ae:	86 95       	lsr	r24
- 5b0:	81 70       	andi	r24, 0x01	; 1
- 5b2:	8a b9       	out	0x0a, r24	; 10
+ 5ae:	8a b1       	in	r24, 0x0a	; 10
+ 5b0:	86 95       	lsr	r24
+ 5b2:	81 70       	andi	r24, 0x01	; 1
+ 5b4:	8a b9       	out	0x0a, r24	; 10
 		*character = ((UCSRB << 8) | UDR);
- 5b4:	2a b1       	in	r18, 0x0a	; 10
- 5b6:	30 e0       	ldi	r19, 0x00	; 0
- 5b8:	32 2f       	mov	r19, r18
- 5ba:	22 27       	eor	r18, r18
- 5bc:	8c b1       	in	r24, 0x0c	; 12
- 5be:	28 2b       	or	r18, r24
- 5c0:	31 83       	std	Z+1, r19	; 0x01
- 5c2:	20 83       	st	Z, r18
+ 5b6:	2a b1       	in	r18, 0x0a	; 10
+ 5b8:	30 e0       	ldi	r19, 0x00	; 0
+ 5ba:	32 2f       	mov	r19, r18
+ 5bc:	22 27       	eor	r18, r18
+ 5be:	8c b1       	in	r24, 0x0c	; 12
+ 5c0:	28 2b       	or	r18, r24
+ 5c2:	31 83       	std	Z+1, r19	; 0x01
+ 5c4:	20 83       	st	Z, r18
 	}
 	
 	*character =  UDR;				/* Return the byte*/
- 5c4:	2c b1       	in	r18, 0x0c	; 12
- 5c6:	30 e0       	ldi	r19, 0x00	; 0
- 5c8:	31 83       	std	Z+1, r19	; 0x01
- 5ca:	20 83       	st	Z, r18
+ 5c6:	2c b1       	in	r18, 0x0c	; 12
+ 5c8:	30 e0       	ldi	r19, 0x00	; 0
+ 5ca:	31 83       	std	Z+1, r19	; 0x01
+ 5cc:	20 83       	st	Z, r18
 	return UART_SUCCESS;
 }
- 5cc:	80 e0       	ldi	r24, 0x00	; 0
- 5ce:	08 95       	ret
+ 5ce:	80 e0       	ldi	r24, 0x00	; 0
+ 5d0:	08 95       	ret
 
-000005d0 <UART_RecieveString>:
+000005d2 <UART_RecieveString>:
 
-UART_STATUS UART_RecieveString(uint8_t *data)
+UART_STATUS_t UART_RecieveString(uint8_t *data)
 {
- 5d0:	bc 01       	movw	r22, r24
+ 5d2:	ac 01       	movw	r20, r24
 	uint8_t i = 0;
- 5d2:	20 e0       	ldi	r18, 0x00	; 0
-	uint8_t size = 10;
+ 5d4:	20 e0       	ldi	r18, 0x00	; 0
 	
-	while (i < size - 1) {
- 5d4:	10 c0       	rjmp	.+32     	; 0x5f6 <UART_RecieveString+0x26>
+	while (1) {
 		uint8_t c;
 		// wait for another char
 		while (! (READ_BIT(UCSRA, RXC)));
  5d6:	5f 9b       	sbis	0x0b, 7	; 11
- 5d8:	fe cf       	rjmp	.-4      	; 0x5d6 <UART_RecieveString+0x6>
+ 5d8:	fe cf       	rjmp	.-4      	; 0x5d6 <UART_RecieveString+0x4>
 		c = (uint8_t)UDR;
  5da:	9c b1       	in	r25, 0x0c	; 12
-		// break on NULL character
+		// break on NULL character or new line
+		// when backspace
 		if ((c == STRING_END) || (c == NEW_LINE)) break;
  5dc:	99 23       	and	r25, r25
- 5de:	81 f0       	breq	.+32     	; 0x600 <UART_RecieveString+0x30>
+ 5de:	71 f0       	breq	.+28     	; 0x5fc <UART_RecieveString+0x2a>
  5e0:	9d 30       	cpi	r25, 0x0D	; 13
- 5e2:	71 f0       	breq	.+28     	; 0x600 <UART_RecieveString+0x30>
+ 5e2:	61 f0       	breq	.+24     	; 0x5fc <UART_RecieveString+0x2a>
 		else if (c == BACKSPACE)
  5e4:	98 30       	cpi	r25, 0x08	; 8
- 5e6:	11 f4       	brne	.+4      	; 0x5ec <UART_RecieveString+0x1c>
+ 5e6:	21 f4       	brne	.+8      	; 0x5f0 <UART_RecieveString+0x1e>
 		{
-			i--;
- 5e8:	21 50       	subi	r18, 0x01	; 1
+			if (i != 0)
+ 5e8:	22 23       	and	r18, r18
+ 5ea:	a9 f3       	breq	.-22     	; 0x5d6 <UART_RecieveString+0x4>
+			{
+				i--;
+ 5ec:	21 50       	subi	r18, 0x01	; 1
+			}
 			continue;
- 5ea:	05 c0       	rjmp	.+10     	; 0x5f6 <UART_RecieveString+0x26>
+ 5ee:	f3 cf       	rjmp	.-26     	; 0x5d6 <UART_RecieveString+0x4>
 		}
 		// write into the supplied buffer
 		data[i] =  (uint8_t)c;
- 5ec:	fb 01       	movw	r30, r22
- 5ee:	e2 0f       	add	r30, r18
- 5f0:	f1 1d       	adc	r31, r1
- 5f2:	90 83       	st	Z, r25
+ 5f0:	fa 01       	movw	r30, r20
+ 5f2:	e2 0f       	add	r30, r18
+ 5f4:	f1 1d       	adc	r31, r1
+ 5f6:	90 83       	st	Z, r25
 		i++;
- 5f4:	2f 5f       	subi	r18, 0xFF	; 255
-UART_STATUS UART_RecieveString(uint8_t *data)
-{
-	uint8_t i = 0;
-	uint8_t size = 10;
-	
-	while (i < size - 1) {
- 5f6:	42 2f       	mov	r20, r18
- 5f8:	50 e0       	ldi	r21, 0x00	; 0
- 5fa:	49 30       	cpi	r20, 0x09	; 9
- 5fc:	51 05       	cpc	r21, r1
- 5fe:	5c f3       	brlt	.-42     	; 0x5d6 <UART_RecieveString+0x6>
-		}
-		// write into the supplied buffer
-		data[i] =  (uint8_t)c;
-		i++;
+ 5f8:	2f 5f       	subi	r18, 0xFF	; 255
+ 5fa:	ed cf       	rjmp	.-38     	; 0x5d6 <UART_RecieveString+0x4>
 	}
 	data[i] = STRING_END;
- 600:	fb 01       	movw	r30, r22
- 602:	e2 0f       	add	r30, r18
- 604:	f1 1d       	adc	r31, r1
- 606:	10 82       	st	Z, r1
+ 5fc:	fa 01       	movw	r30, r20
+ 5fe:	e2 0f       	add	r30, r18
+ 600:	f1 1d       	adc	r31, r1
+ 602:	10 82       	st	Z, r1
 	//return the received string
 	return UART_SUCCESS;
 }
- 608:	80 e0       	ldi	r24, 0x00	; 0
- 60a:	08 95       	ret
+ 604:	80 e0       	ldi	r24, 0x00	; 0
+ 606:	08 95       	ret
 
-0000060c <__udivmodsi4>:
- 60c:	a1 e2       	ldi	r26, 0x21	; 33
- 60e:	1a 2e       	mov	r1, r26
- 610:	aa 1b       	sub	r26, r26
- 612:	bb 1b       	sub	r27, r27
- 614:	fd 01       	movw	r30, r26
- 616:	0d c0       	rjmp	.+26     	; 0x632 <__udivmodsi4_ep>
+00000608 <__udivmodsi4>:
+ 608:	a1 e2       	ldi	r26, 0x21	; 33
+ 60a:	1a 2e       	mov	r1, r26
+ 60c:	aa 1b       	sub	r26, r26
+ 60e:	bb 1b       	sub	r27, r27
+ 610:	fd 01       	movw	r30, r26
+ 612:	0d c0       	rjmp	.+26     	; 0x62e <__udivmodsi4_ep>
 
-00000618 <__udivmodsi4_loop>:
- 618:	aa 1f       	adc	r26, r26
- 61a:	bb 1f       	adc	r27, r27
- 61c:	ee 1f       	adc	r30, r30
- 61e:	ff 1f       	adc	r31, r31
- 620:	a2 17       	cp	r26, r18
- 622:	b3 07       	cpc	r27, r19
- 624:	e4 07       	cpc	r30, r20
- 626:	f5 07       	cpc	r31, r21
- 628:	20 f0       	brcs	.+8      	; 0x632 <__udivmodsi4_ep>
- 62a:	a2 1b       	sub	r26, r18
- 62c:	b3 0b       	sbc	r27, r19
- 62e:	e4 0b       	sbc	r30, r20
- 630:	f5 0b       	sbc	r31, r21
+00000614 <__udivmodsi4_loop>:
+ 614:	aa 1f       	adc	r26, r26
+ 616:	bb 1f       	adc	r27, r27
+ 618:	ee 1f       	adc	r30, r30
+ 61a:	ff 1f       	adc	r31, r31
+ 61c:	a2 17       	cp	r26, r18
+ 61e:	b3 07       	cpc	r27, r19
+ 620:	e4 07       	cpc	r30, r20
+ 622:	f5 07       	cpc	r31, r21
+ 624:	20 f0       	brcs	.+8      	; 0x62e <__udivmodsi4_ep>
+ 626:	a2 1b       	sub	r26, r18
+ 628:	b3 0b       	sbc	r27, r19
+ 62a:	e4 0b       	sbc	r30, r20
+ 62c:	f5 0b       	sbc	r31, r21
 
-00000632 <__udivmodsi4_ep>:
- 632:	66 1f       	adc	r22, r22
- 634:	77 1f       	adc	r23, r23
- 636:	88 1f       	adc	r24, r24
- 638:	99 1f       	adc	r25, r25
- 63a:	1a 94       	dec	r1
- 63c:	69 f7       	brne	.-38     	; 0x618 <__udivmodsi4_loop>
- 63e:	60 95       	com	r22
- 640:	70 95       	com	r23
- 642:	80 95       	com	r24
- 644:	90 95       	com	r25
- 646:	9b 01       	movw	r18, r22
- 648:	ac 01       	movw	r20, r24
- 64a:	bd 01       	movw	r22, r26
- 64c:	cf 01       	movw	r24, r30
- 64e:	08 95       	ret
+0000062e <__udivmodsi4_ep>:
+ 62e:	66 1f       	adc	r22, r22
+ 630:	77 1f       	adc	r23, r23
+ 632:	88 1f       	adc	r24, r24
+ 634:	99 1f       	adc	r25, r25
+ 636:	1a 94       	dec	r1
+ 638:	69 f7       	brne	.-38     	; 0x614 <__udivmodsi4_loop>
+ 63a:	60 95       	com	r22
+ 63c:	70 95       	com	r23
+ 63e:	80 95       	com	r24
+ 640:	90 95       	com	r25
+ 642:	9b 01       	movw	r18, r22
+ 644:	ac 01       	movw	r20, r24
+ 646:	bd 01       	movw	r22, r26
+ 648:	cf 01       	movw	r24, r30
+ 64a:	08 95       	ret
 
-00000650 <_exit>:
- 650:	f8 94       	cli
+0000064c <_exit>:
+ 64c:	f8 94       	cli
 
-00000652 <__stop_program>:
- 652:	ff cf       	rjmp	.-2      	; 0x652 <__stop_program>
+0000064e <__stop_program>:
+ 64e:	ff cf       	rjmp	.-2      	; 0x64e <__stop_program>
