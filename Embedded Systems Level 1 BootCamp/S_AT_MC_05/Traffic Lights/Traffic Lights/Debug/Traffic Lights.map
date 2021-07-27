@@ -237,7 +237,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x730
+.text           0x00000000      0x72c
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -346,19 +346,19 @@ END GROUP
                 0x0000066a       0x1a MCAL/UART/uart.o
                 0x0000066a                UART_TransmitChar
  .text.UART_TransmitString
-                0x00000684       0x28 MCAL/UART/uart.o
+                0x00000684       0x2a MCAL/UART/uart.o
                 0x00000684                UART_TransmitString
  .text.UART_RecieveString
-                0x000006ac       0x3c MCAL/UART/uart.o
-                0x000006ac                UART_RecieveString
+                0x000006ae       0x36 MCAL/UART/uart.o
+                0x000006ae                UART_RecieveString
  .text.libgcc.div
-                0x000006e8       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
-                0x000006e8                __udivmodsi4
-                0x0000072c                . = ALIGN (0x2)
+                0x000006e4       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x000006e4                __udivmodsi4
+                0x00000728                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000072c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000072c                _exit
-                0x0000072c                exit
+ .fini9         0x00000728        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000728                _exit
+                0x00000728                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -377,11 +377,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000072c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000728        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000730                _etext = .
+                0x0000072c                _etext = .
 
-.data           0x00800060       0xbe load address 0x00000730
+.data           0x00800060       0xbe load address 0x0000072c
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -405,8 +405,8 @@ END GROUP
                 0x0080011e        0xc MCAL/UART/uart.o
  *(COMMON)
                 0x0080012a                PROVIDE (__bss_end, .)
-                0x00000730                __data_load_start = LOADADDR (.data)
-                0x000007ee                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000072c                __data_load_start = LOADADDR (.data)
+                0x000007ea                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080012a        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -494,13 +494,13 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x139f
+.debug_info     0x00000000     0x1391
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x6e2 APP/Traffic Lights/Traffic Lights.o
  .debug_info    0x00000bc8      0x14a main.o
  .debug_info    0x00000d12      0x2ae MCAL/DIO/dio.o
- .debug_info    0x00000fc0      0x3df MCAL/UART/uart.o
+ .debug_info    0x00000fc0      0x3d1 MCAL/UART/uart.o
 
 .debug_abbrev   0x00000000      0x8f5
  *(.debug_abbrev)
@@ -525,7 +525,7 @@ END GROUP
  .debug_frame   0x0000009c       0x64 MCAL/DIO/dio.o
  .debug_frame   0x00000100       0xa8 MCAL/UART/uart.o
 
-.debug_str      0x00000000      0x7d2
+.debug_str      0x00000000      0x7cd
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x527 APP/Traffic Lights/Traffic Lights.o
@@ -534,14 +534,14 @@ END GROUP
                                 0x1e9 (size before relaxing)
  .debug_str     0x000006ce       0x6a MCAL/DIO/dio.o
                                 0x264 (size before relaxing)
- .debug_str     0x00000738       0x9a MCAL/UART/uart.o
-                                0x4e2 (size before relaxing)
+ .debug_str     0x00000738       0x95 MCAL/UART/uart.o
+                                0x4dd (size before relaxing)
 
-.debug_loc      0x00000000      0x6d2
+.debug_loc      0x00000000      0x6bf
  *(.debug_loc)
  .debug_loc     0x00000000      0x114 APP/Traffic Lights/Traffic Lights.o
  .debug_loc     0x00000114      0x39f MCAL/DIO/dio.o
- .debug_loc     0x000004b3      0x21f MCAL/UART/uart.o
+ .debug_loc     0x000004b3      0x20c MCAL/UART/uart.o
 
 .debug_macinfo
  *(.debug_macinfo)

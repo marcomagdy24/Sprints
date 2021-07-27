@@ -156,7 +156,7 @@ UART_STATUS_t UART_TransmitString(uint8_t *data)
 		UART_TransmitChar(data[j]);
 		j++;
 	}
-	
+	data[j] = STRING_END;
 	return UART_SUCCESS;
 }
 
@@ -177,16 +177,15 @@ UART_STATUS_t UART_RecieveChar(uint16_t * character)
 UART_STATUS_t UART_RecieveString(uint8_t *data)
 {
 	uint8_t i = 0;
-	uint8_t size = 10;
 	
-	while (i < size - 1) {
+	while (1) {
 		uint8_t c;
 		// wait for another char
 		while (! (READ_BIT(UCSRA, RXC)));
 		c = (uint8_t)UDR;
 		// break on NULL character or new line
+		// when backspace
 		if ((c == STRING_END) || (c == NEW_LINE)) break;
-		// when backspace 
 		else if (c == BACKSPACE)
 		{
 			if (i != 0)
@@ -203,3 +202,4 @@ UART_STATUS_t UART_RecieveString(uint8_t *data)
 	//return the received string
 	return UART_SUCCESS;
 }
+
