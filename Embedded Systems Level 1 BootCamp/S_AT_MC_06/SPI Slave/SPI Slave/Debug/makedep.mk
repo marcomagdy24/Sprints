@@ -10,3 +10,5 @@ MCAL\DIO\dio.c
 
 MCAL\SPI\SPI.c
 
+MCAL\SPI\spiConfig.c
+

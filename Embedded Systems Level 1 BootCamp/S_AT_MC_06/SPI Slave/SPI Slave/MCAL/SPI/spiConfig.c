@@ -8,7 +8,7 @@
 #include "spiConfig.h"
 
 ST_SPI_CONFIG_t config = {
-	SPI_MASTER_MODE,
+	SPI_SLAVE_MODE,
 	SPI_NORMAL_SPEED,
 	SPI_Fosc_4,
 	SPI_CLOCK_POLARITY_RISING ,

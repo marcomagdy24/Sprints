@@ -14,14 +14,23 @@
 *                         GLOBAL STATIC VARIABLES										*
 *******************************************************************************/
 static ST_SPI_CONFIG_t g_ST_SPI_CONFIG_t;
-
-
+extern ST_SPI_CONFIG_t config;
 /******************************************************************************
 *                         APIS IMPLEMENTATION											*
 *******************************************************************************/
-SPI_STATUS_t SPI_Init(ST_SPI_CONFIG_t config)
+SPI_STATUS_t SPI_Init()
 {
 	g_ST_SPI_CONFIG_t = config;
+	
+	if (g_ST_SPI_CONFIG_t.MASTER_SLAVE_MODE == SPI_MASTER_MODE)
+	{
+		SPI_DDR |= (1 << SS) | (1 << MOSI) | (1 << SCK);
+	}
+	else if (g_ST_SPI_CONFIG_t.MASTER_SLAVE_MODE == SPI_SLAVE_MODE)
+	{
+		SPI_DDR |= (1 << MISO);
+	}
+	
 	/********************Enable SPI Interrupt ******************/
 	if ((g_ST_SPI_CONFIG_t.RECIEVER_INT == SPI_RECIEVER_INT_ENABLE) || (g_ST_SPI_CONFIG_t.RECIEVER_INT == SPI_RECIEVER_INT_DISABLE))
 	{
