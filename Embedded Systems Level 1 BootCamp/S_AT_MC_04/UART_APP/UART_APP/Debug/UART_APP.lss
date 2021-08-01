@@ -3,31 +3,31 @@ UART_APP.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000650  00000000  00000000  00000094  2**1
+  0 .text         00000436  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         0000002c  00800060  00000650  000006e4  2**0
+  1 .data         00000056  00800060  00000436  000004ca  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          0000000c  0080008c  0080008c  00000710  2**0
+  2 .bss          0000000c  008000b6  008000b6  00000520  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000710  2**0
+  3 .comment      00000030  00000000  00000000  00000520  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000740  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000550  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000a8  00000000  00000000  0000077c  2**0
+  5 .debug_aranges 00000068  00000000  00000000  0000058c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000010ba  00000000  00000000  00000824  2**0
+  6 .debug_info   00000d7e  00000000  00000000  000005f4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000007ea  00000000  00000000  000018de  2**0
+  7 .debug_abbrev 000006f8  00000000  00000000  00001372  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000007b3  00000000  00000000  000020c8  2**0
+  8 .debug_line   00000521  00000000  00000000  00001a6a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000140  00000000  00000000  0000287c  2**2
+  9 .debug_frame  000000dc  00000000  00000000  00001f8c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000768  00000000  00000000  000029bc  2**0
+ 10 .debug_str    000006b0  00000000  00000000  00002068  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000005f2  00000000  00000000  00003124  2**0
+ 11 .debug_loc    00000253  00000000  00000000  00002718  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000078  00000000  00000000  00003716  2**0
+ 12 .debug_ranges 00000048  00000000  00000000  0000296b  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -67,18 +67,18 @@ Disassembly of section .text:
   60:	10 e0       	ldi	r17, 0x00	; 0
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	e0 e5       	ldi	r30, 0x50	; 80
-  68:	f6 e0       	ldi	r31, 0x06	; 6
+  66:	e6 e3       	ldi	r30, 0x36	; 54
+  68:	f4 e0       	ldi	r31, 0x04	; 4
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
   6e:	0d 92       	st	X+, r0
-  70:	ac 38       	cpi	r26, 0x8C	; 140
+  70:	a6 3b       	cpi	r26, 0xB6	; 182
   72:	b1 07       	cpc	r27, r17
   74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
 
 00000076 <__do_clear_bss>:
   76:	20 e0       	ldi	r18, 0x00	; 0
-  78:	ac e8       	ldi	r26, 0x8C	; 140
+  78:	a6 eb       	ldi	r26, 0xB6	; 182
   7a:	b0 e0       	ldi	r27, 0x00	; 0
   7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
 
@@ -86,11 +86,11 @@ Disassembly of section .text:
   7e:	1d 92       	st	X+, r1
 
 00000080 <.do_clear_bss_start>:
-  80:	a8 39       	cpi	r26, 0x98	; 152
+  80:	a2 3c       	cpi	r26, 0xC2	; 194
   82:	b2 07       	cpc	r27, r18
   84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
   86:	0e 94 49 00 	call	0x92	; 0x92 <main>
-  8a:	0c 94 26 03 	jmp	0x64c	; 0x64c <_exit>
+  8a:	0c 94 19 02 	jmp	0x432	; 0x432 <_exit>
 
 0000008e <__bad_interrupt>:
   8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -106,7 +106,7 @@ int main(void)
   94:	df 93       	push	r29
   96:	cd b7       	in	r28, 0x3d	; 61
   98:	de b7       	in	r29, 0x3e	; 62
-  9a:	6b 97       	sbiw	r28, 0x1b	; 27
+  9a:	68 97       	sbiw	r28, 0x18	; 24
   9c:	0f b6       	in	r0, 0x3f	; 63
   9e:	f8 94       	cli
   a0:	de bf       	out	0x3e, r29	; 62
@@ -127,1158 +127,695 @@ int main(void)
 		UART_TRANSMITER_INT_DISABLE,
 		UART_RECIEVER_INT_DISABLE
 	};
-	ST_DIO_config port_b_5 = {DIO_PORTB, PIN_5, OUTPUT};
-  b8:	81 e0       	ldi	r24, 0x01	; 1
-  ba:	8d 87       	std	Y+13, r24	; 0x0d
-  bc:	95 e0       	ldi	r25, 0x05	; 5
-  be:	9e 87       	std	Y+14, r25	; 0x0e
-  c0:	8f 87       	std	Y+15, r24	; 0x0f
-	DIO_Init(&port_b_5);
-  c2:	ce 01       	movw	r24, r28
-  c4:	0d 96       	adiw	r24, 0x0d	; 13
-  c6:	0e 94 af 00 	call	0x15e	; 0x15e <DIO_Init>
 	UART_Init(configs);
-  ca:	e9 80       	ldd	r14, Y+1	; 0x01
-  cc:	fa 80       	ldd	r15, Y+2	; 0x02
-  ce:	0b 81       	ldd	r16, Y+3	; 0x03
-  d0:	1c 81       	ldd	r17, Y+4	; 0x04
-  d2:	2d 81       	ldd	r18, Y+5	; 0x05
-  d4:	3e 81       	ldd	r19, Y+6	; 0x06
-  d6:	4f 81       	ldd	r20, Y+7	; 0x07
-  d8:	58 85       	ldd	r21, Y+8	; 0x08
-  da:	69 85       	ldd	r22, Y+9	; 0x09
-  dc:	7a 85       	ldd	r23, Y+10	; 0x0a
-  de:	8b 85       	ldd	r24, Y+11	; 0x0b
-  e0:	9c 85       	ldd	r25, Y+12	; 0x0c
-  e2:	0e 94 c1 01 	call	0x382	; 0x382 <UART_Init>
+  b8:	e9 80       	ldd	r14, Y+1	; 0x01
+  ba:	fa 80       	ldd	r15, Y+2	; 0x02
+  bc:	0b 81       	ldd	r16, Y+3	; 0x03
+  be:	1c 81       	ldd	r17, Y+4	; 0x04
+  c0:	2d 81       	ldd	r18, Y+5	; 0x05
+  c2:	3e 81       	ldd	r19, Y+6	; 0x06
+  c4:	4f 81       	ldd	r20, Y+7	; 0x07
+  c6:	58 85       	ldd	r21, Y+8	; 0x08
+  c8:	69 85       	ldd	r22, Y+9	; 0x09
+  ca:	7a 85       	ldd	r23, Y+10	; 0x0a
+  cc:	8b 85       	ldd	r24, Y+11	; 0x0b
+  ce:	9c 85       	ldd	r25, Y+12	; 0x0c
+  d0:	0e 94 b4 00 	call	0x168	; 0x168 <UART_Init>
 	UART_TransmitString((uint8_t *) "Start");
-  e6:	8c e6       	ldi	r24, 0x6C	; 108
-  e8:	90 e0       	ldi	r25, 0x00	; 0
-  ea:	0e 94 b8 02 	call	0x570	; 0x570 <UART_TransmitString>
-	UART_TransmitChar('\r');
-  ee:	8d e0       	ldi	r24, 0x0D	; 13
-  f0:	90 e0       	ldi	r25, 0x00	; 0
-  f2:	0e 94 ab 02 	call	0x556	; 0x556 <UART_TransmitChar>
+  d4:	8c e6       	ldi	r24, 0x6C	; 108
+  d6:	90 e0       	ldi	r25, 0x00	; 0
+  d8:	0e 94 ab 01 	call	0x356	; 0x356 <UART_TransmitString>
+	UART_TransmitChar(NEW_LINE);
+  dc:	8d e0       	ldi	r24, 0x0D	; 13
+  de:	90 e0       	ldi	r25, 0x00	; 0
+  e0:	0e 94 9e 01 	call	0x33c	; 0x33c <UART_TransmitChar>
 	uint16_t received ;
 	uint8_t y[10];
-	UART_TransmitString((uint8_t *) "Received: ");
-  f6:	82 e7       	ldi	r24, 0x72	; 114
-  f8:	90 e0       	ldi	r25, 0x00	; 0
-  fa:	0e 94 b8 02 	call	0x570	; 0x570 <UART_TransmitString>
-	if (!(UART_RecieveString(y)))
-  fe:	ce 01       	movw	r24, r28
- 100:	42 96       	adiw	r24, 0x12	; 18
- 102:	0e 94 e9 02 	call	0x5d2	; 0x5d2 <UART_RecieveString>
- 106:	81 11       	cpse	r24, r1
- 108:	05 c0       	rjmp	.+10     	; 0x114 <main+0x82>
-	{
-		DIO_Write_PIN(DIO_PORTB, PIN_5, HIGH);
- 10a:	41 e0       	ldi	r20, 0x01	; 1
- 10c:	65 e0       	ldi	r22, 0x05	; 5
- 10e:	81 e0       	ldi	r24, 0x01	; 1
- 110:	0e 94 2b 01 	call	0x256	; 0x256 <DIO_Write_PIN>
-	}
-	UART_TransmitString((uint8_t *) "Sent: ");
- 114:	8d e7       	ldi	r24, 0x7D	; 125
- 116:	90 e0       	ldi	r25, 0x00	; 0
- 118:	0e 94 b8 02 	call	0x570	; 0x570 <UART_TransmitString>
+	UART_TransmitString((uint8_t *) "Received String: ");
+  e4:	82 e7       	ldi	r24, 0x72	; 114
+  e6:	90 e0       	ldi	r25, 0x00	; 0
+  e8:	0e 94 ab 01 	call	0x356	; 0x356 <UART_TransmitString>
+	UART_RecieveString(y);
+  ec:	ce 01       	movw	r24, r28
+  ee:	0f 96       	adiw	r24, 0x0f	; 15
+  f0:	0e 94 dc 01 	call	0x3b8	; 0x3b8 <UART_RecieveString>
+	UART_TransmitString((uint8_t *) "Sent String: ");
+  f4:	84 e8       	ldi	r24, 0x84	; 132
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	0e 94 ab 01 	call	0x356	; 0x356 <UART_TransmitString>
 	UART_TransmitString(y);
- 11c:	ce 01       	movw	r24, r28
- 11e:	42 96       	adiw	r24, 0x12	; 18
- 120:	0e 94 b8 02 	call	0x570	; 0x570 <UART_TransmitString>
+  fc:	ce 01       	movw	r24, r28
+  fe:	0f 96       	adiw	r24, 0x0f	; 15
+ 100:	0e 94 ab 01 	call	0x356	; 0x356 <UART_TransmitString>
 	UART_TransmitChar(NEW_LINE);
- 124:	8d e0       	ldi	r24, 0x0D	; 13
- 126:	90 e0       	ldi	r25, 0x00	; 0
- 128:	0e 94 ab 02 	call	0x556	; 0x556 <UART_TransmitChar>
+ 104:	8d e0       	ldi	r24, 0x0D	; 13
+ 106:	90 e0       	ldi	r25, 0x00	; 0
+ 108:	0e 94 9e 01 	call	0x33c	; 0x33c <UART_TransmitChar>
 	/* Replace with your application code */
 	while (1)
 	{
-		UART_TransmitString((uint8_t *) "Received: ");
- 12c:	82 e7       	ldi	r24, 0x72	; 114
- 12e:	90 e0       	ldi	r25, 0x00	; 0
- 130:	0e 94 b8 02 	call	0x570	; 0x570 <UART_TransmitString>
+		UART_TransmitString((uint8_t *) "Received Char: ");
+ 10c:	82 e9       	ldi	r24, 0x92	; 146
+ 10e:	90 e0       	ldi	r25, 0x00	; 0
+ 110:	0e 94 ab 01 	call	0x356	; 0x356 <UART_TransmitString>
 		UART_RecieveChar(&received);
- 134:	ce 01       	movw	r24, r28
- 136:	40 96       	adiw	r24, 0x10	; 16
- 138:	0e 94 cd 02 	call	0x59a	; 0x59a <UART_RecieveChar>
+ 114:	ce 01       	movw	r24, r28
+ 116:	0d 96       	adiw	r24, 0x0d	; 13
+ 118:	0e 94 c0 01 	call	0x380	; 0x380 <UART_RecieveChar>
 		UART_TransmitString((uint8_t *) "       ");
- 13c:	84 e8       	ldi	r24, 0x84	; 132
- 13e:	90 e0       	ldi	r25, 0x00	; 0
- 140:	0e 94 b8 02 	call	0x570	; 0x570 <UART_TransmitString>
-		UART_TransmitString((uint8_t *) "Sent: ");
- 144:	8d e7       	ldi	r24, 0x7D	; 125
- 146:	90 e0       	ldi	r25, 0x00	; 0
- 148:	0e 94 b8 02 	call	0x570	; 0x570 <UART_TransmitString>
+ 11c:	82 ea       	ldi	r24, 0xA2	; 162
+ 11e:	90 e0       	ldi	r25, 0x00	; 0
+ 120:	0e 94 ab 01 	call	0x356	; 0x356 <UART_TransmitString>
+		UART_TransmitString((uint8_t *) "Sent Char: ");
+ 124:	8a ea       	ldi	r24, 0xAA	; 170
+ 126:	90 e0       	ldi	r25, 0x00	; 0
+ 128:	0e 94 ab 01 	call	0x356	; 0x356 <UART_TransmitString>
 		UART_TransmitChar(received);
- 14c:	88 89       	ldd	r24, Y+16	; 0x10
- 14e:	99 89       	ldd	r25, Y+17	; 0x11
- 150:	0e 94 ab 02 	call	0x556	; 0x556 <UART_TransmitChar>
+ 12c:	8d 85       	ldd	r24, Y+13	; 0x0d
+ 12e:	9e 85       	ldd	r25, Y+14	; 0x0e
+ 130:	0e 94 9e 01 	call	0x33c	; 0x33c <UART_TransmitChar>
 		UART_TransmitChar(NEW_LINE);
- 154:	8d e0       	ldi	r24, 0x0D	; 13
- 156:	90 e0       	ldi	r25, 0x00	; 0
- 158:	0e 94 ab 02 	call	0x556	; 0x556 <UART_TransmitChar>
- 15c:	e7 cf       	rjmp	.-50     	; 0x12c <main+0x9a>
+ 134:	8d e0       	ldi	r24, 0x0D	; 13
+ 136:	90 e0       	ldi	r25, 0x00	; 0
+ 138:	0e 94 9e 01 	call	0x33c	; 0x33c <UART_TransmitChar>
+ 13c:	e7 cf       	rjmp	.-50     	; 0x10c <main+0x7a>
 
-0000015e <DIO_Init>:
-*/
-
-#include "dio.h"
-
-E_STATUS DIO_Init(ST_DIO_config* configurations)
-{
- 15e:	fc 01       	movw	r30, r24
-	E_STATUS au8_error=E_INVALID;
-	if(((configurations->port <= DIO_PORTD)||(configurations->port >= DIO_PORTA))&&
-	((configurations->pin <= PIN_7)||(configurations->pin >= PIN_0)))
-	{
-		switch(configurations->port)
- 160:	90 81       	ld	r25, Z
- 162:	91 30       	cpi	r25, 0x01	; 1
- 164:	19 f1       	breq	.+70     	; 0x1ac <DIO_Init+0x4e>
- 166:	30 f0       	brcs	.+12     	; 0x174 <DIO_Init+0x16>
- 168:	92 30       	cpi	r25, 0x02	; 2
- 16a:	e1 f1       	breq	.+120    	; 0x1e4 <DIO_Init+0x86>
- 16c:	93 30       	cpi	r25, 0x03	; 3
- 16e:	09 f4       	brne	.+2      	; 0x172 <DIO_Init+0x14>
- 170:	55 c0       	rjmp	.+170    	; 0x21c <DIO_Init+0xbe>
- 172:	6f c0       	rjmp	.+222    	; 0x252 <DIO_Init+0xf4>
-		{
-			case DIO_PORTA:
-			{
-				if(configurations->dir == OUTPUT)
- 174:	82 81       	ldd	r24, Z+2	; 0x02
- 176:	81 30       	cpi	r24, 0x01	; 1
- 178:	61 f4       	brne	.+24     	; 0x192 <DIO_Init+0x34>
-				{
-					SET_BIT(PORTA_DIR,configurations->pin);
- 17a:	2a b3       	in	r18, 0x1a	; 26
- 17c:	81 e0       	ldi	r24, 0x01	; 1
- 17e:	90 e0       	ldi	r25, 0x00	; 0
- 180:	01 80       	ldd	r0, Z+1	; 0x01
- 182:	02 c0       	rjmp	.+4      	; 0x188 <DIO_Init+0x2a>
- 184:	88 0f       	add	r24, r24
- 186:	99 1f       	adc	r25, r25
- 188:	0a 94       	dec	r0
- 18a:	e2 f7       	brpl	.-8      	; 0x184 <DIO_Init+0x26>
- 18c:	82 2b       	or	r24, r18
- 18e:	8a bb       	out	0x1a, r24	; 26
- 190:	60 c0       	rjmp	.+192    	; 0x252 <DIO_Init+0xf4>
-				}else
-				{
-					RESET_BIT(PORTA_DIR,configurations->pin);
- 192:	2a b3       	in	r18, 0x1a	; 26
- 194:	81 e0       	ldi	r24, 0x01	; 1
- 196:	90 e0       	ldi	r25, 0x00	; 0
- 198:	01 80       	ldd	r0, Z+1	; 0x01
- 19a:	02 c0       	rjmp	.+4      	; 0x1a0 <DIO_Init+0x42>
- 19c:	88 0f       	add	r24, r24
- 19e:	99 1f       	adc	r25, r25
- 1a0:	0a 94       	dec	r0
- 1a2:	e2 f7       	brpl	.-8      	; 0x19c <DIO_Init+0x3e>
- 1a4:	80 95       	com	r24
- 1a6:	82 23       	and	r24, r18
- 1a8:	8a bb       	out	0x1a, r24	; 26
- 1aa:	53 c0       	rjmp	.+166    	; 0x252 <DIO_Init+0xf4>
-				}
-				break;
-			}
-			case DIO_PORTB:
-			{
-				if(configurations->dir == OUTPUT)
- 1ac:	82 81       	ldd	r24, Z+2	; 0x02
- 1ae:	81 30       	cpi	r24, 0x01	; 1
- 1b0:	61 f4       	brne	.+24     	; 0x1ca <DIO_Init+0x6c>
-				{
-					SET_BIT(PORTB_DIR,configurations->pin);
- 1b2:	27 b3       	in	r18, 0x17	; 23
- 1b4:	81 e0       	ldi	r24, 0x01	; 1
- 1b6:	90 e0       	ldi	r25, 0x00	; 0
- 1b8:	01 80       	ldd	r0, Z+1	; 0x01
- 1ba:	02 c0       	rjmp	.+4      	; 0x1c0 <DIO_Init+0x62>
- 1bc:	88 0f       	add	r24, r24
- 1be:	99 1f       	adc	r25, r25
- 1c0:	0a 94       	dec	r0
- 1c2:	e2 f7       	brpl	.-8      	; 0x1bc <DIO_Init+0x5e>
- 1c4:	82 2b       	or	r24, r18
- 1c6:	87 bb       	out	0x17, r24	; 23
- 1c8:	44 c0       	rjmp	.+136    	; 0x252 <DIO_Init+0xf4>
-				}else
-				{
-					RESET_BIT(PORTB_DIR,configurations->pin);
- 1ca:	27 b3       	in	r18, 0x17	; 23
- 1cc:	81 e0       	ldi	r24, 0x01	; 1
- 1ce:	90 e0       	ldi	r25, 0x00	; 0
- 1d0:	01 80       	ldd	r0, Z+1	; 0x01
- 1d2:	02 c0       	rjmp	.+4      	; 0x1d8 <DIO_Init+0x7a>
- 1d4:	88 0f       	add	r24, r24
- 1d6:	99 1f       	adc	r25, r25
- 1d8:	0a 94       	dec	r0
- 1da:	e2 f7       	brpl	.-8      	; 0x1d4 <DIO_Init+0x76>
- 1dc:	80 95       	com	r24
- 1de:	82 23       	and	r24, r18
- 1e0:	87 bb       	out	0x17, r24	; 23
- 1e2:	37 c0       	rjmp	.+110    	; 0x252 <DIO_Init+0xf4>
-				}
-				break;
-			}
-			case DIO_PORTC:
-			{
-				if(configurations->dir == OUTPUT)
- 1e4:	82 81       	ldd	r24, Z+2	; 0x02
- 1e6:	81 30       	cpi	r24, 0x01	; 1
- 1e8:	61 f4       	brne	.+24     	; 0x202 <DIO_Init+0xa4>
-				{
-					SET_BIT(PORTC_DIR,configurations->pin);
- 1ea:	24 b3       	in	r18, 0x14	; 20
- 1ec:	81 e0       	ldi	r24, 0x01	; 1
- 1ee:	90 e0       	ldi	r25, 0x00	; 0
- 1f0:	01 80       	ldd	r0, Z+1	; 0x01
- 1f2:	02 c0       	rjmp	.+4      	; 0x1f8 <DIO_Init+0x9a>
- 1f4:	88 0f       	add	r24, r24
- 1f6:	99 1f       	adc	r25, r25
- 1f8:	0a 94       	dec	r0
- 1fa:	e2 f7       	brpl	.-8      	; 0x1f4 <DIO_Init+0x96>
- 1fc:	82 2b       	or	r24, r18
- 1fe:	84 bb       	out	0x14, r24	; 20
- 200:	28 c0       	rjmp	.+80     	; 0x252 <DIO_Init+0xf4>
-				}else
-				{
-					RESET_BIT(PORTC_DIR,configurations->pin);
- 202:	24 b3       	in	r18, 0x14	; 20
- 204:	81 e0       	ldi	r24, 0x01	; 1
- 206:	90 e0       	ldi	r25, 0x00	; 0
- 208:	01 80       	ldd	r0, Z+1	; 0x01
- 20a:	02 c0       	rjmp	.+4      	; 0x210 <DIO_Init+0xb2>
- 20c:	88 0f       	add	r24, r24
- 20e:	99 1f       	adc	r25, r25
- 210:	0a 94       	dec	r0
- 212:	e2 f7       	brpl	.-8      	; 0x20c <DIO_Init+0xae>
- 214:	80 95       	com	r24
- 216:	82 23       	and	r24, r18
- 218:	84 bb       	out	0x14, r24	; 20
- 21a:	1b c0       	rjmp	.+54     	; 0x252 <DIO_Init+0xf4>
-				}
-				break;
-			}
-			case DIO_PORTD:
-			{
-				if(configurations->dir == OUTPUT)
- 21c:	82 81       	ldd	r24, Z+2	; 0x02
- 21e:	81 30       	cpi	r24, 0x01	; 1
- 220:	61 f4       	brne	.+24     	; 0x23a <DIO_Init+0xdc>
-				{
-					SET_BIT(PORTD_DIR,configurations->pin);
- 222:	21 b3       	in	r18, 0x11	; 17
- 224:	81 e0       	ldi	r24, 0x01	; 1
- 226:	90 e0       	ldi	r25, 0x00	; 0
- 228:	01 80       	ldd	r0, Z+1	; 0x01
- 22a:	02 c0       	rjmp	.+4      	; 0x230 <DIO_Init+0xd2>
- 22c:	88 0f       	add	r24, r24
- 22e:	99 1f       	adc	r25, r25
- 230:	0a 94       	dec	r0
- 232:	e2 f7       	brpl	.-8      	; 0x22c <DIO_Init+0xce>
- 234:	82 2b       	or	r24, r18
- 236:	81 bb       	out	0x11, r24	; 17
- 238:	0c c0       	rjmp	.+24     	; 0x252 <DIO_Init+0xf4>
-				}else
-				{
-					RESET_BIT(PORTD_DIR,configurations->pin);
- 23a:	21 b3       	in	r18, 0x11	; 17
- 23c:	81 e0       	ldi	r24, 0x01	; 1
- 23e:	90 e0       	ldi	r25, 0x00	; 0
- 240:	01 80       	ldd	r0, Z+1	; 0x01
- 242:	02 c0       	rjmp	.+4      	; 0x248 <DIO_Init+0xea>
- 244:	88 0f       	add	r24, r24
- 246:	99 1f       	adc	r25, r25
- 248:	0a 94       	dec	r0
- 24a:	e2 f7       	brpl	.-8      	; 0x244 <DIO_Init+0xe6>
- 24c:	80 95       	com	r24
- 24e:	82 23       	and	r24, r18
- 250:	81 bb       	out	0x11, r24	; 17
-			}
-
-		}
-	}
-	return au8_error;
-}
- 252:	80 e0       	ldi	r24, 0x00	; 0
- 254:	08 95       	ret
-
-00000256 <DIO_Write_PIN>:
-
-
-E_STATUS DIO_Write_PIN(uint8_t port,EN_pins pin,uint8_t data)
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
- 256:	84 30       	cpi	r24, 0x04	; 4
- 258:	08 f0       	brcs	.+2      	; 0x25c <DIO_Write_PIN+0x6>
- 25a:	78 c0       	rjmp	.+240    	; 0x34c <DIO_Write_PIN+0xf6>
- 25c:	68 30       	cpi	r22, 0x08	; 8
- 25e:	08 f0       	brcs	.+2      	; 0x262 <DIO_Write_PIN+0xc>
- 260:	77 c0       	rjmp	.+238    	; 0x350 <DIO_Write_PIN+0xfa>
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
-		switch(port)
- 262:	81 30       	cpi	r24, 0x01	; 1
- 264:	11 f1       	breq	.+68     	; 0x2aa <DIO_Write_PIN+0x54>
- 266:	30 f0       	brcs	.+12     	; 0x274 <DIO_Write_PIN+0x1e>
- 268:	82 30       	cpi	r24, 0x02	; 2
- 26a:	d1 f1       	breq	.+116    	; 0x2e0 <DIO_Write_PIN+0x8a>
- 26c:	83 30       	cpi	r24, 0x03	; 3
- 26e:	09 f4       	brne	.+2      	; 0x272 <DIO_Write_PIN+0x1c>
- 270:	52 c0       	rjmp	.+164    	; 0x316 <DIO_Write_PIN+0xc0>
- 272:	70 c0       	rjmp	.+224    	; 0x354 <DIO_Write_PIN+0xfe>
-		{
-			case DIO_PORTA:
-			{
-				if(data == HIGH)
- 274:	41 30       	cpi	r20, 0x01	; 1
- 276:	61 f4       	brne	.+24     	; 0x290 <DIO_Write_PIN+0x3a>
-				{
-					SET_BIT(PORTA_DATA,pin);
- 278:	2b b3       	in	r18, 0x1b	; 27
- 27a:	81 e0       	ldi	r24, 0x01	; 1
- 27c:	90 e0       	ldi	r25, 0x00	; 0
- 27e:	02 c0       	rjmp	.+4      	; 0x284 <DIO_Write_PIN+0x2e>
- 280:	88 0f       	add	r24, r24
- 282:	99 1f       	adc	r25, r25
- 284:	6a 95       	dec	r22
- 286:	e2 f7       	brpl	.-8      	; 0x280 <DIO_Write_PIN+0x2a>
- 288:	82 2b       	or	r24, r18
- 28a:	8b bb       	out	0x1b, r24	; 27
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 28c:	81 e0       	ldi	r24, 0x01	; 1
- 28e:	08 95       	ret
-				if(data == HIGH)
-				{
-					SET_BIT(PORTA_DATA,pin);
-				}else
-				{
-					RESET_BIT(PORTA_DATA,pin);
- 290:	2b b3       	in	r18, 0x1b	; 27
- 292:	81 e0       	ldi	r24, 0x01	; 1
- 294:	90 e0       	ldi	r25, 0x00	; 0
- 296:	02 c0       	rjmp	.+4      	; 0x29c <DIO_Write_PIN+0x46>
- 298:	88 0f       	add	r24, r24
- 29a:	99 1f       	adc	r25, r25
- 29c:	6a 95       	dec	r22
- 29e:	e2 f7       	brpl	.-8      	; 0x298 <DIO_Write_PIN+0x42>
- 2a0:	80 95       	com	r24
- 2a2:	82 23       	and	r24, r18
- 2a4:	8b bb       	out	0x1b, r24	; 27
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 2a6:	81 e0       	ldi	r24, 0x01	; 1
- 2a8:	08 95       	ret
-				}
-				break;
-			}
-			case DIO_PORTB:
-			{
-				if(data == HIGH)
- 2aa:	41 30       	cpi	r20, 0x01	; 1
- 2ac:	61 f4       	brne	.+24     	; 0x2c6 <DIO_Write_PIN+0x70>
-				{
-					SET_BIT(PORTB_DATA,pin);
- 2ae:	28 b3       	in	r18, 0x18	; 24
- 2b0:	81 e0       	ldi	r24, 0x01	; 1
- 2b2:	90 e0       	ldi	r25, 0x00	; 0
- 2b4:	02 c0       	rjmp	.+4      	; 0x2ba <DIO_Write_PIN+0x64>
- 2b6:	88 0f       	add	r24, r24
- 2b8:	99 1f       	adc	r25, r25
- 2ba:	6a 95       	dec	r22
- 2bc:	e2 f7       	brpl	.-8      	; 0x2b6 <DIO_Write_PIN+0x60>
- 2be:	82 2b       	or	r24, r18
- 2c0:	88 bb       	out	0x18, r24	; 24
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 2c2:	81 e0       	ldi	r24, 0x01	; 1
- 2c4:	08 95       	ret
-				if(data == HIGH)
-				{
-					SET_BIT(PORTB_DATA,pin);
-				}else
-				{
-					RESET_BIT(PORTB_DATA,pin);
- 2c6:	28 b3       	in	r18, 0x18	; 24
- 2c8:	81 e0       	ldi	r24, 0x01	; 1
- 2ca:	90 e0       	ldi	r25, 0x00	; 0
- 2cc:	02 c0       	rjmp	.+4      	; 0x2d2 <DIO_Write_PIN+0x7c>
- 2ce:	88 0f       	add	r24, r24
- 2d0:	99 1f       	adc	r25, r25
- 2d2:	6a 95       	dec	r22
- 2d4:	e2 f7       	brpl	.-8      	; 0x2ce <DIO_Write_PIN+0x78>
- 2d6:	80 95       	com	r24
- 2d8:	82 23       	and	r24, r18
- 2da:	88 bb       	out	0x18, r24	; 24
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 2dc:	81 e0       	ldi	r24, 0x01	; 1
- 2de:	08 95       	ret
-				}
-				break;
-			}
-			case DIO_PORTC:
-			{
-				if(data == HIGH)
- 2e0:	41 30       	cpi	r20, 0x01	; 1
- 2e2:	61 f4       	brne	.+24     	; 0x2fc <DIO_Write_PIN+0xa6>
-				{
-					SET_BIT(PORTC_DATA,pin);
- 2e4:	25 b3       	in	r18, 0x15	; 21
- 2e6:	81 e0       	ldi	r24, 0x01	; 1
- 2e8:	90 e0       	ldi	r25, 0x00	; 0
- 2ea:	02 c0       	rjmp	.+4      	; 0x2f0 <DIO_Write_PIN+0x9a>
- 2ec:	88 0f       	add	r24, r24
- 2ee:	99 1f       	adc	r25, r25
- 2f0:	6a 95       	dec	r22
- 2f2:	e2 f7       	brpl	.-8      	; 0x2ec <DIO_Write_PIN+0x96>
- 2f4:	82 2b       	or	r24, r18
- 2f6:	85 bb       	out	0x15, r24	; 21
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 2f8:	81 e0       	ldi	r24, 0x01	; 1
- 2fa:	08 95       	ret
-				if(data == HIGH)
-				{
-					SET_BIT(PORTC_DATA,pin);
-				}else
-				{
-					RESET_BIT(PORTC_DATA,pin);
- 2fc:	25 b3       	in	r18, 0x15	; 21
- 2fe:	81 e0       	ldi	r24, 0x01	; 1
- 300:	90 e0       	ldi	r25, 0x00	; 0
- 302:	02 c0       	rjmp	.+4      	; 0x308 <DIO_Write_PIN+0xb2>
- 304:	88 0f       	add	r24, r24
- 306:	99 1f       	adc	r25, r25
- 308:	6a 95       	dec	r22
- 30a:	e2 f7       	brpl	.-8      	; 0x304 <DIO_Write_PIN+0xae>
- 30c:	80 95       	com	r24
- 30e:	82 23       	and	r24, r18
- 310:	85 bb       	out	0x15, r24	; 21
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 312:	81 e0       	ldi	r24, 0x01	; 1
- 314:	08 95       	ret
-				}
-				break;
-			}
-			case DIO_PORTD:
-			{
-				if(data == HIGH)
- 316:	41 30       	cpi	r20, 0x01	; 1
- 318:	61 f4       	brne	.+24     	; 0x332 <DIO_Write_PIN+0xdc>
-				{
-					SET_BIT(PORTD_DATA,pin);
- 31a:	22 b3       	in	r18, 0x12	; 18
- 31c:	81 e0       	ldi	r24, 0x01	; 1
- 31e:	90 e0       	ldi	r25, 0x00	; 0
- 320:	02 c0       	rjmp	.+4      	; 0x326 <DIO_Write_PIN+0xd0>
- 322:	88 0f       	add	r24, r24
- 324:	99 1f       	adc	r25, r25
- 326:	6a 95       	dec	r22
- 328:	e2 f7       	brpl	.-8      	; 0x322 <DIO_Write_PIN+0xcc>
- 32a:	82 2b       	or	r24, r18
- 32c:	82 bb       	out	0x12, r24	; 18
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 32e:	81 e0       	ldi	r24, 0x01	; 1
- 330:	08 95       	ret
-				if(data == HIGH)
-				{
-					SET_BIT(PORTD_DATA,pin);
-				}else
-				{
-					RESET_BIT(PORTD_DATA,pin);
- 332:	22 b3       	in	r18, 0x12	; 18
- 334:	81 e0       	ldi	r24, 0x01	; 1
- 336:	90 e0       	ldi	r25, 0x00	; 0
- 338:	02 c0       	rjmp	.+4      	; 0x33e <DIO_Write_PIN+0xe8>
- 33a:	88 0f       	add	r24, r24
- 33c:	99 1f       	adc	r25, r25
- 33e:	6a 95       	dec	r22
- 340:	e2 f7       	brpl	.-8      	; 0x33a <DIO_Write_PIN+0xe4>
- 342:	80 95       	com	r24
- 344:	82 23       	and	r24, r18
- 346:	82 bb       	out	0x12, r24	; 18
-{
-	E_STATUS au8_error=E_INVALID;
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 348:	81 e0       	ldi	r24, 0x01	; 1
- 34a:	08 95       	ret
-}
-
-
-E_STATUS DIO_Write_PIN(uint8_t port,EN_pins pin,uint8_t data)
-{
-	E_STATUS au8_error=E_INVALID;
- 34c:	80 e0       	ldi	r24, 0x00	; 0
- 34e:	08 95       	ret
- 350:	80 e0       	ldi	r24, 0x00	; 0
- 352:	08 95       	ret
-	if(((port <= DIO_PORTD)&&(port >= DIO_PORTA))&&
-	((pin <= PIN_7)&&(pin >= PIN_0)))
-	{
-		au8_error = E_OK;
- 354:	81 e0       	ldi	r24, 0x01	; 1
-			}
-
-		}
-	}
-	return au8_error;
-}
- 356:	08 95       	ret
-
-00000358 <char_bits>:
+0000013e <char_bits>:
 *                         LOCAL FUNCTION IMPLEMENTATION								*
 *******************************************************************************/
 
 void char_bits(uint8_t bits_no)
 {
 	switch (bits_no){
- 358:	84 30       	cpi	r24, 0x04	; 4
- 35a:	49 f4       	brne	.+18     	; 0x36e <char_bits+0x16>
+ 13e:	84 30       	cpi	r24, 0x04	; 4
+ 140:	49 f4       	brne	.+18     	; 0x154 <char_bits+0x16>
 		case (UART_9_Bit_CHAR) :
 		{
 			SET_BIT(UCSRC, URSEL);
- 35c:	90 b5       	in	r25, 0x20	; 32
- 35e:	90 68       	ori	r25, 0x80	; 128
- 360:	90 bd       	out	0x20, r25	; 32
+ 142:	90 b5       	in	r25, 0x20	; 32
+ 144:	90 68       	ori	r25, 0x80	; 128
+ 146:	90 bd       	out	0x20, r25	; 32
 			UCSRC |= ((uint8_t)(UART_8_Bit_CHAR) << 1);
- 362:	90 b5       	in	r25, 0x20	; 32
- 364:	96 60       	ori	r25, 0x06	; 6
- 366:	90 bd       	out	0x20, r25	; 32
+ 148:	90 b5       	in	r25, 0x20	; 32
+ 14a:	96 60       	ori	r25, 0x06	; 6
+ 14c:	90 bd       	out	0x20, r25	; 32
 			SET_BIT(UCSRB, UCSZ2);
- 368:	9a b1       	in	r25, 0x0a	; 10
- 36a:	94 60       	ori	r25, 0x04	; 4
- 36c:	9a b9       	out	0x0a, r25	; 10
+ 14e:	9a b1       	in	r25, 0x0a	; 10
+ 150:	94 60       	ori	r25, 0x04	; 4
+ 152:	9a b9       	out	0x0a, r25	; 10
 		}
 		default:
 		{
 			SET_BIT(UCSRC, URSEL);
- 36e:	90 b5       	in	r25, 0x20	; 32
- 370:	90 68       	ori	r25, 0x80	; 128
- 372:	90 bd       	out	0x20, r25	; 32
+ 154:	90 b5       	in	r25, 0x20	; 32
+ 156:	90 68       	ori	r25, 0x80	; 128
+ 158:	90 bd       	out	0x20, r25	; 32
 			UCSRC |= (bits_no << 1);
- 374:	20 b5       	in	r18, 0x20	; 32
- 376:	90 e0       	ldi	r25, 0x00	; 0
- 378:	88 0f       	add	r24, r24
- 37a:	99 1f       	adc	r25, r25
- 37c:	82 2b       	or	r24, r18
- 37e:	80 bd       	out	0x20, r24	; 32
- 380:	08 95       	ret
+ 15a:	20 b5       	in	r18, 0x20	; 32
+ 15c:	90 e0       	ldi	r25, 0x00	; 0
+ 15e:	88 0f       	add	r24, r24
+ 160:	99 1f       	adc	r25, r25
+ 162:	82 2b       	or	r24, r18
+ 164:	80 bd       	out	0x20, r24	; 32
+ 166:	08 95       	ret
 
-00000382 <UART_Init>:
+00000168 <UART_Init>:
 
 /******************************************************************************
 *                         APIS IMPLEMENTATION											*
 *******************************************************************************/
 UART_STATUS_t UART_Init(ST_UART_CONFIG_t config)
 {
- 382:	ef 92       	push	r14
- 384:	ff 92       	push	r15
- 386:	0f 93       	push	r16
- 388:	1f 93       	push	r17
- 38a:	cf 93       	push	r28
- 38c:	df 93       	push	r29
- 38e:	cd b7       	in	r28, 0x3d	; 61
- 390:	de b7       	in	r29, 0x3e	; 62
- 392:	2c 97       	sbiw	r28, 0x0c	; 12
- 394:	0f b6       	in	r0, 0x3f	; 63
- 396:	f8 94       	cli
- 398:	de bf       	out	0x3e, r29	; 62
- 39a:	0f be       	out	0x3f, r0	; 63
- 39c:	cd bf       	out	0x3d, r28	; 61
- 39e:	e9 82       	std	Y+1, r14	; 0x01
- 3a0:	fa 82       	std	Y+2, r15	; 0x02
- 3a2:	0b 83       	std	Y+3, r16	; 0x03
- 3a4:	1c 83       	std	Y+4, r17	; 0x04
- 3a6:	2d 83       	std	Y+5, r18	; 0x05
- 3a8:	3e 83       	std	Y+6, r19	; 0x06
- 3aa:	4f 83       	std	Y+7, r20	; 0x07
- 3ac:	58 87       	std	Y+8, r21	; 0x08
- 3ae:	69 87       	std	Y+9, r22	; 0x09
- 3b0:	7a 87       	std	Y+10, r23	; 0x0a
- 3b2:	8b 87       	std	Y+11, r24	; 0x0b
- 3b4:	9c 87       	std	Y+12, r25	; 0x0c
+ 168:	ef 92       	push	r14
+ 16a:	ff 92       	push	r15
+ 16c:	0f 93       	push	r16
+ 16e:	1f 93       	push	r17
+ 170:	cf 93       	push	r28
+ 172:	df 93       	push	r29
+ 174:	cd b7       	in	r28, 0x3d	; 61
+ 176:	de b7       	in	r29, 0x3e	; 62
+ 178:	2c 97       	sbiw	r28, 0x0c	; 12
+ 17a:	0f b6       	in	r0, 0x3f	; 63
+ 17c:	f8 94       	cli
+ 17e:	de bf       	out	0x3e, r29	; 62
+ 180:	0f be       	out	0x3f, r0	; 63
+ 182:	cd bf       	out	0x3d, r28	; 61
+ 184:	e9 82       	std	Y+1, r14	; 0x01
+ 186:	fa 82       	std	Y+2, r15	; 0x02
+ 188:	0b 83       	std	Y+3, r16	; 0x03
+ 18a:	1c 83       	std	Y+4, r17	; 0x04
+ 18c:	2d 83       	std	Y+5, r18	; 0x05
+ 18e:	3e 83       	std	Y+6, r19	; 0x06
+ 190:	4f 83       	std	Y+7, r20	; 0x07
+ 192:	58 87       	std	Y+8, r21	; 0x08
+ 194:	69 87       	std	Y+9, r22	; 0x09
+ 196:	7a 87       	std	Y+10, r23	; 0x0a
+ 198:	8b 87       	std	Y+11, r24	; 0x0b
+ 19a:	9c 87       	std	Y+12, r25	; 0x0c
 	g_ST_UART_CONFIG_t = config;
- 3b6:	8c e0       	ldi	r24, 0x0C	; 12
- 3b8:	fe 01       	movw	r30, r28
- 3ba:	31 96       	adiw	r30, 0x01	; 1
- 3bc:	ac e8       	ldi	r26, 0x8C	; 140
- 3be:	b0 e0       	ldi	r27, 0x00	; 0
- 3c0:	01 90       	ld	r0, Z+
- 3c2:	0d 92       	st	X+, r0
- 3c4:	8a 95       	dec	r24
- 3c6:	e1 f7       	brne	.-8      	; 0x3c0 <UART_Init+0x3e>
+ 19c:	8c e0       	ldi	r24, 0x0C	; 12
+ 19e:	fe 01       	movw	r30, r28
+ 1a0:	31 96       	adiw	r30, 0x01	; 1
+ 1a2:	a6 eb       	ldi	r26, 0xB6	; 182
+ 1a4:	b0 e0       	ldi	r27, 0x00	; 0
+ 1a6:	01 90       	ld	r0, Z+
+ 1a8:	0d 92       	st	X+, r0
+ 1aa:	8a 95       	dec	r24
+ 1ac:	e1 f7       	brne	.-8      	; 0x1a6 <UART_Init+0x3e>
 	uint32_t UBRR_VAL;
 	/************** Check Baud rate and Speed mode **************/
 	if ((g_ST_UART_CONFIG_t.BAUD_RATE >= 0) && (g_ST_UART_CONFIG_t.BAUD_RATE <= MAX_BAUD_RATE))
- 3c8:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <__data_end+0x1>
- 3cc:	90 91 8e 00 	lds	r25, 0x008E	; 0x80008e <__data_end+0x2>
- 3d0:	a0 91 8f 00 	lds	r26, 0x008F	; 0x80008f <__data_end+0x3>
- 3d4:	b0 91 90 00 	lds	r27, 0x0090	; 0x800090 <__data_end+0x4>
- 3d8:	81 15       	cp	r24, r1
- 3da:	20 e1       	ldi	r18, 0x10	; 16
- 3dc:	92 07       	cpc	r25, r18
- 3de:	a1 05       	cpc	r26, r1
- 3e0:	b1 05       	cpc	r27, r1
- 3e2:	08 f0       	brcs	.+2      	; 0x3e6 <UART_Init+0x64>
- 3e4:	9a c0       	rjmp	.+308    	; 0x51a <__EEPROM_REGION_LENGTH__+0x11a>
+ 1ae:	80 91 b7 00 	lds	r24, 0x00B7	; 0x8000b7 <__data_end+0x1>
+ 1b2:	90 91 b8 00 	lds	r25, 0x00B8	; 0x8000b8 <__data_end+0x2>
+ 1b6:	a0 91 b9 00 	lds	r26, 0x00B9	; 0x8000b9 <__data_end+0x3>
+ 1ba:	b0 91 ba 00 	lds	r27, 0x00BA	; 0x8000ba <__data_end+0x4>
+ 1be:	81 15       	cp	r24, r1
+ 1c0:	20 e1       	ldi	r18, 0x10	; 16
+ 1c2:	92 07       	cpc	r25, r18
+ 1c4:	a1 05       	cpc	r26, r1
+ 1c6:	b1 05       	cpc	r27, r1
+ 1c8:	08 f0       	brcs	.+2      	; 0x1cc <UART_Init+0x64>
+ 1ca:	9a c0       	rjmp	.+308    	; 0x300 <UART_Init+0x198>
 	{
 		if(g_ST_UART_CONFIG_t.SPEED_MODE == UART_NORMAL_SPEED){
- 3e6:	20 91 8c 00 	lds	r18, 0x008C	; 0x80008c <__data_end>
- 3ea:	21 11       	cpse	r18, r1
- 3ec:	1f c0       	rjmp	.+62     	; 0x42c <__EEPROM_REGION_LENGTH__+0x2c>
+ 1cc:	20 91 b6 00 	lds	r18, 0x00B6	; 0x8000b6 <__data_end>
+ 1d0:	21 11       	cpse	r18, r1
+ 1d2:	1f c0       	rjmp	.+62     	; 0x212 <UART_Init+0xaa>
 			UBRR_VAL = (uint32_t) ((F_CPU/(16*g_ST_UART_CONFIG_t.BAUD_RATE))-1);
- 3ee:	88 0f       	add	r24, r24
- 3f0:	99 1f       	adc	r25, r25
- 3f2:	aa 1f       	adc	r26, r26
- 3f4:	bb 1f       	adc	r27, r27
- 3f6:	88 0f       	add	r24, r24
- 3f8:	99 1f       	adc	r25, r25
- 3fa:	aa 1f       	adc	r26, r26
- 3fc:	bb 1f       	adc	r27, r27
- 3fe:	9c 01       	movw	r18, r24
- 400:	ad 01       	movw	r20, r26
- 402:	22 0f       	add	r18, r18
- 404:	33 1f       	adc	r19, r19
- 406:	44 1f       	adc	r20, r20
- 408:	55 1f       	adc	r21, r21
- 40a:	22 0f       	add	r18, r18
- 40c:	33 1f       	adc	r19, r19
- 40e:	44 1f       	adc	r20, r20
- 410:	55 1f       	adc	r21, r21
- 412:	60 e4       	ldi	r22, 0x40	; 64
- 414:	72 e4       	ldi	r23, 0x42	; 66
- 416:	8f e0       	ldi	r24, 0x0F	; 15
- 418:	90 e0       	ldi	r25, 0x00	; 0
- 41a:	0e 94 04 03 	call	0x608	; 0x608 <__udivmodsi4>
- 41e:	ba 01       	movw	r22, r20
- 420:	a9 01       	movw	r20, r18
- 422:	41 50       	subi	r20, 0x01	; 1
- 424:	51 09       	sbc	r21, r1
- 426:	61 09       	sbc	r22, r1
- 428:	71 09       	sbc	r23, r1
- 42a:	27 c0       	rjmp	.+78     	; 0x47a <__EEPROM_REGION_LENGTH__+0x7a>
+ 1d4:	88 0f       	add	r24, r24
+ 1d6:	99 1f       	adc	r25, r25
+ 1d8:	aa 1f       	adc	r26, r26
+ 1da:	bb 1f       	adc	r27, r27
+ 1dc:	88 0f       	add	r24, r24
+ 1de:	99 1f       	adc	r25, r25
+ 1e0:	aa 1f       	adc	r26, r26
+ 1e2:	bb 1f       	adc	r27, r27
+ 1e4:	9c 01       	movw	r18, r24
+ 1e6:	ad 01       	movw	r20, r26
+ 1e8:	22 0f       	add	r18, r18
+ 1ea:	33 1f       	adc	r19, r19
+ 1ec:	44 1f       	adc	r20, r20
+ 1ee:	55 1f       	adc	r21, r21
+ 1f0:	22 0f       	add	r18, r18
+ 1f2:	33 1f       	adc	r19, r19
+ 1f4:	44 1f       	adc	r20, r20
+ 1f6:	55 1f       	adc	r21, r21
+ 1f8:	60 e4       	ldi	r22, 0x40	; 64
+ 1fa:	72 e4       	ldi	r23, 0x42	; 66
+ 1fc:	8f e0       	ldi	r24, 0x0F	; 15
+ 1fe:	90 e0       	ldi	r25, 0x00	; 0
+ 200:	0e 94 f7 01 	call	0x3ee	; 0x3ee <__udivmodsi4>
+ 204:	ba 01       	movw	r22, r20
+ 206:	a9 01       	movw	r20, r18
+ 208:	41 50       	subi	r20, 0x01	; 1
+ 20a:	51 09       	sbc	r21, r1
+ 20c:	61 09       	sbc	r22, r1
+ 20e:	71 09       	sbc	r23, r1
+ 210:	27 c0       	rjmp	.+78     	; 0x260 <UART_Init+0xf8>
 		}
 		else if(g_ST_UART_CONFIG_t.SPEED_MODE == UART_DOUBLE_SPEED)
- 42c:	22 30       	cpi	r18, 0x02	; 2
- 42e:	09 f0       	breq	.+2      	; 0x432 <__EEPROM_REGION_LENGTH__+0x32>
- 430:	76 c0       	rjmp	.+236    	; 0x51e <__EEPROM_REGION_LENGTH__+0x11e>
+ 212:	22 30       	cpi	r18, 0x02	; 2
+ 214:	09 f0       	breq	.+2      	; 0x218 <UART_Init+0xb0>
+ 216:	76 c0       	rjmp	.+236    	; 0x304 <UART_Init+0x19c>
 		{
 			SET_BIT(UCSRA, U2X);
- 432:	8b b1       	in	r24, 0x0b	; 11
- 434:	82 60       	ori	r24, 0x02	; 2
- 436:	8b b9       	out	0x0b, r24	; 11
+ 218:	8b b1       	in	r24, 0x0b	; 11
+ 21a:	82 60       	ori	r24, 0x02	; 2
+ 21c:	8b b9       	out	0x0b, r24	; 11
 			UBRR_VAL = (uint16_t) ((F_CPU/(8*g_ST_UART_CONFIG_t.BAUD_RATE))-1);
- 438:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <__data_end+0x1>
- 43c:	90 91 8e 00 	lds	r25, 0x008E	; 0x80008e <__data_end+0x2>
- 440:	a0 91 8f 00 	lds	r26, 0x008F	; 0x80008f <__data_end+0x3>
- 444:	b0 91 90 00 	lds	r27, 0x0090	; 0x800090 <__data_end+0x4>
- 448:	88 0f       	add	r24, r24
- 44a:	99 1f       	adc	r25, r25
- 44c:	aa 1f       	adc	r26, r26
- 44e:	bb 1f       	adc	r27, r27
- 450:	88 0f       	add	r24, r24
- 452:	99 1f       	adc	r25, r25
- 454:	aa 1f       	adc	r26, r26
- 456:	bb 1f       	adc	r27, r27
- 458:	9c 01       	movw	r18, r24
- 45a:	ad 01       	movw	r20, r26
- 45c:	22 0f       	add	r18, r18
- 45e:	33 1f       	adc	r19, r19
- 460:	44 1f       	adc	r20, r20
- 462:	55 1f       	adc	r21, r21
- 464:	60 e4       	ldi	r22, 0x40	; 64
- 466:	72 e4       	ldi	r23, 0x42	; 66
- 468:	8f e0       	ldi	r24, 0x0F	; 15
- 46a:	90 e0       	ldi	r25, 0x00	; 0
- 46c:	0e 94 04 03 	call	0x608	; 0x608 <__udivmodsi4>
- 470:	21 50       	subi	r18, 0x01	; 1
- 472:	31 09       	sbc	r19, r1
- 474:	a9 01       	movw	r20, r18
- 476:	60 e0       	ldi	r22, 0x00	; 0
- 478:	70 e0       	ldi	r23, 0x00	; 0
+ 21e:	80 91 b7 00 	lds	r24, 0x00B7	; 0x8000b7 <__data_end+0x1>
+ 222:	90 91 b8 00 	lds	r25, 0x00B8	; 0x8000b8 <__data_end+0x2>
+ 226:	a0 91 b9 00 	lds	r26, 0x00B9	; 0x8000b9 <__data_end+0x3>
+ 22a:	b0 91 ba 00 	lds	r27, 0x00BA	; 0x8000ba <__data_end+0x4>
+ 22e:	88 0f       	add	r24, r24
+ 230:	99 1f       	adc	r25, r25
+ 232:	aa 1f       	adc	r26, r26
+ 234:	bb 1f       	adc	r27, r27
+ 236:	88 0f       	add	r24, r24
+ 238:	99 1f       	adc	r25, r25
+ 23a:	aa 1f       	adc	r26, r26
+ 23c:	bb 1f       	adc	r27, r27
+ 23e:	9c 01       	movw	r18, r24
+ 240:	ad 01       	movw	r20, r26
+ 242:	22 0f       	add	r18, r18
+ 244:	33 1f       	adc	r19, r19
+ 246:	44 1f       	adc	r20, r20
+ 248:	55 1f       	adc	r21, r21
+ 24a:	60 e4       	ldi	r22, 0x40	; 64
+ 24c:	72 e4       	ldi	r23, 0x42	; 66
+ 24e:	8f e0       	ldi	r24, 0x0F	; 15
+ 250:	90 e0       	ldi	r25, 0x00	; 0
+ 252:	0e 94 f7 01 	call	0x3ee	; 0x3ee <__udivmodsi4>
+ 256:	21 50       	subi	r18, 0x01	; 1
+ 258:	31 09       	sbc	r19, r1
+ 25a:	a9 01       	movw	r20, r18
+ 25c:	60 e0       	ldi	r22, 0x00	; 0
+ 25e:	70 e0       	ldi	r23, 0x00	; 0
 	}
 	else
 	{
 		return UART_INVALID_BAUD_RATE;
 	}
 	UBRRH =(uint8_t) (UBRR_VAL >> 8);
- 47a:	bb 27       	eor	r27, r27
- 47c:	a7 2f       	mov	r26, r23
- 47e:	96 2f       	mov	r25, r22
- 480:	85 2f       	mov	r24, r21
- 482:	80 bd       	out	0x20, r24	; 32
+ 260:	bb 27       	eor	r27, r27
+ 262:	a7 2f       	mov	r26, r23
+ 264:	96 2f       	mov	r25, r22
+ 266:	85 2f       	mov	r24, r21
+ 268:	80 bd       	out	0x20, r24	; 32
 	UBRRL = (uint8_t) UBRR_VAL;
- 484:	49 b9       	out	0x09, r20	; 9
+ 26a:	49 b9       	out	0x09, r20	; 9
 	
 	
 	/************** Enable transmitter **************/
 	if ((g_ST_UART_CONFIG_t.TRANSMIT == UART_TRANSMIT_ENABLE) || (g_ST_UART_CONFIG_t.TRANSMIT == UART_TRANSMIT_DISABLE))
- 486:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <__data_end+0x5>
- 48a:	88 30       	cpi	r24, 0x08	; 8
- 48c:	11 f0       	breq	.+4      	; 0x492 <__EEPROM_REGION_LENGTH__+0x92>
- 48e:	81 11       	cpse	r24, r1
- 490:	48 c0       	rjmp	.+144    	; 0x522 <__EEPROM_REGION_LENGTH__+0x122>
+ 26c:	80 91 bb 00 	lds	r24, 0x00BB	; 0x8000bb <__data_end+0x5>
+ 270:	88 30       	cpi	r24, 0x08	; 8
+ 272:	11 f0       	breq	.+4      	; 0x278 <UART_Init+0x110>
+ 274:	81 11       	cpse	r24, r1
+ 276:	48 c0       	rjmp	.+144    	; 0x308 <UART_Init+0x1a0>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.TRANSMIT));
- 492:	9a b1       	in	r25, 0x0a	; 10
- 494:	89 2b       	or	r24, r25
- 496:	8a b9       	out	0x0a, r24	; 10
+ 278:	9a b1       	in	r25, 0x0a	; 10
+ 27a:	89 2b       	or	r24, r25
+ 27c:	8a b9       	out	0x0a, r24	; 10
 	else
 	{
 		return UART_TRANSMIT_ERROR;
 	}
 	/************** Enable receiver **************/
 	if ((g_ST_UART_CONFIG_t.RECIEVE == UART_RECIEVE_ENABLE) || (g_ST_UART_CONFIG_t.RECIEVE == UART_RECIEVE_DISABLE))
- 498:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <__data_end+0x6>
- 49c:	80 31       	cpi	r24, 0x10	; 16
- 49e:	11 f0       	breq	.+4      	; 0x4a4 <__EEPROM_REGION_LENGTH__+0xa4>
- 4a0:	81 11       	cpse	r24, r1
- 4a2:	41 c0       	rjmp	.+130    	; 0x526 <__EEPROM_REGION_LENGTH__+0x126>
+ 27e:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__data_end+0x6>
+ 282:	80 31       	cpi	r24, 0x10	; 16
+ 284:	11 f0       	breq	.+4      	; 0x28a <UART_Init+0x122>
+ 286:	81 11       	cpse	r24, r1
+ 288:	41 c0       	rjmp	.+130    	; 0x30c <UART_Init+0x1a4>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.RECIEVE));
- 4a4:	9a b1       	in	r25, 0x0a	; 10
- 4a6:	89 2b       	or	r24, r25
- 4a8:	8a b9       	out	0x0a, r24	; 10
+ 28a:	9a b1       	in	r25, 0x0a	; 10
+ 28c:	89 2b       	or	r24, r25
+ 28e:	8a b9       	out	0x0a, r24	; 10
 	else
 	{
 		return UART_RECIEVE_ERROR;
 	}
 	/************** Char BITS **************/
 	if ((g_ST_UART_CONFIG_t.CHAR_BITS >= UART_5_Bit_CHAR) && (g_ST_UART_CONFIG_t.CHAR_BITS <= UART_9_Bit_CHAR))
- 4aa:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <__data_end+0x7>
- 4ae:	85 30       	cpi	r24, 0x05	; 5
- 4b0:	e0 f5       	brcc	.+120    	; 0x52a <__EEPROM_REGION_LENGTH__+0x12a>
+ 290:	80 91 bd 00 	lds	r24, 0x00BD	; 0x8000bd <__data_end+0x7>
+ 294:	85 30       	cpi	r24, 0x05	; 5
+ 296:	e0 f5       	brcc	.+120    	; 0x310 <UART_Init+0x1a8>
 	{
 		char_bits(g_ST_UART_CONFIG_t.CHAR_BITS);
- 4b2:	0e 94 ac 01 	call	0x358	; 0x358 <char_bits>
+ 298:	0e 94 9f 00 	call	0x13e	; 0x13e <char_bits>
 	else
 	{
 		return UART_CHAR_BITS_ERROR;
 	}
 	/************** Stop BITS **************/
 	if ((g_ST_UART_CONFIG_t.STOP_BIT == UART_1_STOP_BIT) || (g_ST_UART_CONFIG_t.STOP_BIT == UART_2_STOP_BIT))
- 4b6:	80 91 95 00 	lds	r24, 0x0095	; 0x800095 <__data_end+0x9>
- 4ba:	88 23       	and	r24, r24
- 4bc:	11 f0       	breq	.+4      	; 0x4c2 <__EEPROM_REGION_LENGTH__+0xc2>
- 4be:	88 30       	cpi	r24, 0x08	; 8
- 4c0:	b1 f5       	brne	.+108    	; 0x52e <__EEPROM_REGION_LENGTH__+0x12e>
+ 29c:	80 91 bf 00 	lds	r24, 0x00BF	; 0x8000bf <__data_end+0x9>
+ 2a0:	88 23       	and	r24, r24
+ 2a2:	11 f0       	breq	.+4      	; 0x2a8 <UART_Init+0x140>
+ 2a4:	88 30       	cpi	r24, 0x08	; 8
+ 2a6:	b1 f5       	brne	.+108    	; 0x314 <UART_Init+0x1ac>
 	{
 		SET_BIT(UCSRC, URSEL);
- 4c2:	80 b5       	in	r24, 0x20	; 32
- 4c4:	80 68       	ori	r24, 0x80	; 128
- 4c6:	80 bd       	out	0x20, r24	; 32
+ 2a8:	80 b5       	in	r24, 0x20	; 32
+ 2aa:	80 68       	ori	r24, 0x80	; 128
+ 2ac:	80 bd       	out	0x20, r24	; 32
 		UCSRC |= ((uint8_t)(g_ST_UART_CONFIG_t.STOP_BIT));
- 4c8:	90 b5       	in	r25, 0x20	; 32
- 4ca:	ec e8       	ldi	r30, 0x8C	; 140
- 4cc:	f0 e0       	ldi	r31, 0x00	; 0
- 4ce:	81 85       	ldd	r24, Z+9	; 0x09
- 4d0:	89 2b       	or	r24, r25
- 4d2:	80 bd       	out	0x20, r24	; 32
+ 2ae:	90 b5       	in	r25, 0x20	; 32
+ 2b0:	e6 eb       	ldi	r30, 0xB6	; 182
+ 2b2:	f0 e0       	ldi	r31, 0x00	; 0
+ 2b4:	81 85       	ldd	r24, Z+9	; 0x09
+ 2b6:	89 2b       	or	r24, r25
+ 2b8:	80 bd       	out	0x20, r24	; 32
 	else
 	{
 		return UART_STOP_BITS_ERROR;
 	}
 	/************** Parity BITS **************/
 	if ((g_ST_UART_CONFIG_t.PARITY_MODE == UART_NO_PARITY) || (g_ST_UART_CONFIG_t.PARITY_MODE == UART_EVEN_PARITY) || (g_ST_UART_CONFIG_t.PARITY_MODE == UART_ODD_PARITY))
- 4d4:	80 85       	ldd	r24, Z+8	; 0x08
- 4d6:	88 23       	and	r24, r24
- 4d8:	21 f0       	breq	.+8      	; 0x4e2 <__EEPROM_REGION_LENGTH__+0xe2>
- 4da:	80 32       	cpi	r24, 0x20	; 32
- 4dc:	11 f0       	breq	.+4      	; 0x4e2 <__EEPROM_REGION_LENGTH__+0xe2>
- 4de:	80 33       	cpi	r24, 0x30	; 48
- 4e0:	41 f5       	brne	.+80     	; 0x532 <__EEPROM_REGION_LENGTH__+0x132>
+ 2ba:	80 85       	ldd	r24, Z+8	; 0x08
+ 2bc:	88 23       	and	r24, r24
+ 2be:	21 f0       	breq	.+8      	; 0x2c8 <UART_Init+0x160>
+ 2c0:	80 32       	cpi	r24, 0x20	; 32
+ 2c2:	11 f0       	breq	.+4      	; 0x2c8 <UART_Init+0x160>
+ 2c4:	80 33       	cpi	r24, 0x30	; 48
+ 2c6:	41 f5       	brne	.+80     	; 0x318 <UART_Init+0x1b0>
 	{
 		SET_BIT(UCSRC, URSEL);
- 4e2:	80 b5       	in	r24, 0x20	; 32
- 4e4:	80 68       	ori	r24, 0x80	; 128
- 4e6:	80 bd       	out	0x20, r24	; 32
+ 2c8:	80 b5       	in	r24, 0x20	; 32
+ 2ca:	80 68       	ori	r24, 0x80	; 128
+ 2cc:	80 bd       	out	0x20, r24	; 32
 		UCSRC |= ((uint8_t)(g_ST_UART_CONFIG_t.PARITY_MODE));
- 4e8:	90 b5       	in	r25, 0x20	; 32
- 4ea:	ec e8       	ldi	r30, 0x8C	; 140
- 4ec:	f0 e0       	ldi	r31, 0x00	; 0
- 4ee:	80 85       	ldd	r24, Z+8	; 0x08
- 4f0:	89 2b       	or	r24, r25
- 4f2:	80 bd       	out	0x20, r24	; 32
+ 2ce:	90 b5       	in	r25, 0x20	; 32
+ 2d0:	e6 eb       	ldi	r30, 0xB6	; 182
+ 2d2:	f0 e0       	ldi	r31, 0x00	; 0
+ 2d4:	80 85       	ldd	r24, Z+8	; 0x08
+ 2d6:	89 2b       	or	r24, r25
+ 2d8:	80 bd       	out	0x20, r24	; 32
 	else
 	{
 		return UART_PARITY_ERROR;
 	}
 	/************** Enable transmitter interrupt**************/
 	if ((g_ST_UART_CONFIG_t.TRANSMITER_INT == UART_TRANSMITER_INT_ENABLE) || (g_ST_UART_CONFIG_t.TRANSMITER_INT == UART_TRANSMITER_INT_DISABLE))
- 4f4:	82 85       	ldd	r24, Z+10	; 0x0a
- 4f6:	80 34       	cpi	r24, 0x40	; 64
- 4f8:	11 f0       	breq	.+4      	; 0x4fe <__EEPROM_REGION_LENGTH__+0xfe>
- 4fa:	81 11       	cpse	r24, r1
- 4fc:	1c c0       	rjmp	.+56     	; 0x536 <__EEPROM_REGION_LENGTH__+0x136>
+ 2da:	82 85       	ldd	r24, Z+10	; 0x0a
+ 2dc:	80 34       	cpi	r24, 0x40	; 64
+ 2de:	11 f0       	breq	.+4      	; 0x2e4 <UART_Init+0x17c>
+ 2e0:	81 11       	cpse	r24, r1
+ 2e2:	1c c0       	rjmp	.+56     	; 0x31c <UART_Init+0x1b4>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.TRANSMITER_INT));
- 4fe:	9a b1       	in	r25, 0x0a	; 10
- 500:	89 2b       	or	r24, r25
- 502:	8a b9       	out	0x0a, r24	; 10
+ 2e4:	9a b1       	in	r25, 0x0a	; 10
+ 2e6:	89 2b       	or	r24, r25
+ 2e8:	8a b9       	out	0x0a, r24	; 10
 	else
 	{
 		return UART_TRANSMIT_ERROR;
 	}
 	/************** Enable receiver interrupt **************/
 	if ((g_ST_UART_CONFIG_t.RECIEVE_INT == UART_RECIEVER_INT_ENABLE) || (g_ST_UART_CONFIG_t.RECIEVE_INT == UART_RECIEVER_INT_DISABLE))
- 504:	80 91 97 00 	lds	r24, 0x0097	; 0x800097 <__data_end+0xb>
- 508:	80 38       	cpi	r24, 0x80	; 128
- 50a:	11 f0       	breq	.+4      	; 0x510 <__EEPROM_REGION_LENGTH__+0x110>
- 50c:	81 11       	cpse	r24, r1
- 50e:	15 c0       	rjmp	.+42     	; 0x53a <__EEPROM_REGION_LENGTH__+0x13a>
+ 2ea:	80 91 c1 00 	lds	r24, 0x00C1	; 0x8000c1 <__data_end+0xb>
+ 2ee:	80 38       	cpi	r24, 0x80	; 128
+ 2f0:	11 f0       	breq	.+4      	; 0x2f6 <UART_Init+0x18e>
+ 2f2:	81 11       	cpse	r24, r1
+ 2f4:	15 c0       	rjmp	.+42     	; 0x320 <UART_Init+0x1b8>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.RECIEVE_INT));
- 510:	9a b1       	in	r25, 0x0a	; 10
- 512:	89 2b       	or	r24, r25
- 514:	8a b9       	out	0x0a, r24	; 10
+ 2f6:	9a b1       	in	r25, 0x0a	; 10
+ 2f8:	89 2b       	or	r24, r25
+ 2fa:	8a b9       	out	0x0a, r24	; 10
 	else
 	{
 		return UART_RECIEVE_INT_ERROR;
 	}
 	g_u8_UART_init = INIT;
 	return UART_SUCCESS;
- 516:	80 e0       	ldi	r24, 0x00	; 0
- 518:	11 c0       	rjmp	.+34     	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 2fc:	80 e0       	ldi	r24, 0x00	; 0
+ 2fe:	11 c0       	rjmp	.+34     	; 0x322 <UART_Init+0x1ba>
 			return UART_ERROR_NOT_INITIALIZED;
 		}
 	}
 	else
 	{
 		return UART_INVALID_BAUD_RATE;
- 51a:	85 e0       	ldi	r24, 0x05	; 5
- 51c:	0f c0       	rjmp	.+30     	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 300:	85 e0       	ldi	r24, 0x05	; 5
+ 302:	0f c0       	rjmp	.+30     	; 0x322 <UART_Init+0x1ba>
 		{
 			SET_BIT(UCSRA, U2X);
 			UBRR_VAL = (uint16_t) ((F_CPU/(8*g_ST_UART_CONFIG_t.BAUD_RATE))-1);
 		}
 		else{
 			return UART_ERROR_NOT_INITIALIZED;
- 51e:	81 e0       	ldi	r24, 0x01	; 1
- 520:	0d c0       	rjmp	.+26     	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 304:	81 e0       	ldi	r24, 0x01	; 1
+ 306:	0d c0       	rjmp	.+26     	; 0x322 <UART_Init+0x1ba>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.TRANSMIT));
 	}
 	else
 	{
 		return UART_TRANSMIT_ERROR;
- 522:	86 e0       	ldi	r24, 0x06	; 6
- 524:	0b c0       	rjmp	.+22     	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 308:	86 e0       	ldi	r24, 0x06	; 6
+ 30a:	0b c0       	rjmp	.+22     	; 0x322 <UART_Init+0x1ba>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.RECIEVE));
 	}
 	else
 	{
 		return UART_RECIEVE_ERROR;
- 526:	87 e0       	ldi	r24, 0x07	; 7
- 528:	09 c0       	rjmp	.+18     	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 30c:	87 e0       	ldi	r24, 0x07	; 7
+ 30e:	09 c0       	rjmp	.+18     	; 0x322 <UART_Init+0x1ba>
 	{
 		char_bits(g_ST_UART_CONFIG_t.CHAR_BITS);
 	}
 	else
 	{
 		return UART_CHAR_BITS_ERROR;
- 52a:	82 e0       	ldi	r24, 0x02	; 2
- 52c:	07 c0       	rjmp	.+14     	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 310:	82 e0       	ldi	r24, 0x02	; 2
+ 312:	07 c0       	rjmp	.+14     	; 0x322 <UART_Init+0x1ba>
 		SET_BIT(UCSRC, URSEL);
 		UCSRC |= ((uint8_t)(g_ST_UART_CONFIG_t.STOP_BIT));
 	}
 	else
 	{
 		return UART_STOP_BITS_ERROR;
- 52e:	83 e0       	ldi	r24, 0x03	; 3
- 530:	05 c0       	rjmp	.+10     	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 314:	83 e0       	ldi	r24, 0x03	; 3
+ 316:	05 c0       	rjmp	.+10     	; 0x322 <UART_Init+0x1ba>
 		SET_BIT(UCSRC, URSEL);
 		UCSRC |= ((uint8_t)(g_ST_UART_CONFIG_t.PARITY_MODE));
 	}
 	else
 	{
 		return UART_PARITY_ERROR;
- 532:	84 e0       	ldi	r24, 0x04	; 4
- 534:	03 c0       	rjmp	.+6      	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 318:	84 e0       	ldi	r24, 0x04	; 4
+ 31a:	03 c0       	rjmp	.+6      	; 0x322 <UART_Init+0x1ba>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.TRANSMITER_INT));
 	}
 	else
 	{
 		return UART_TRANSMIT_ERROR;
- 536:	86 e0       	ldi	r24, 0x06	; 6
- 538:	01 c0       	rjmp	.+2      	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 31c:	86 e0       	ldi	r24, 0x06	; 6
+ 31e:	01 c0       	rjmp	.+2      	; 0x322 <UART_Init+0x1ba>
 	{
 		UCSRB |= ((uint8_t)(g_ST_UART_CONFIG_t.RECIEVE_INT));
 	}
 	else
 	{
 		return UART_RECIEVE_INT_ERROR;
- 53a:	89 e0       	ldi	r24, 0x09	; 9
+ 320:	89 e0       	ldi	r24, 0x09	; 9
 	}
 	g_u8_UART_init = INIT;
 	return UART_SUCCESS;
 }
- 53c:	2c 96       	adiw	r28, 0x0c	; 12
- 53e:	0f b6       	in	r0, 0x3f	; 63
- 540:	f8 94       	cli
- 542:	de bf       	out	0x3e, r29	; 62
- 544:	0f be       	out	0x3f, r0	; 63
- 546:	cd bf       	out	0x3d, r28	; 61
- 548:	df 91       	pop	r29
- 54a:	cf 91       	pop	r28
- 54c:	1f 91       	pop	r17
- 54e:	0f 91       	pop	r16
- 550:	ff 90       	pop	r15
- 552:	ef 90       	pop	r14
- 554:	08 95       	ret
+ 322:	2c 96       	adiw	r28, 0x0c	; 12
+ 324:	0f b6       	in	r0, 0x3f	; 63
+ 326:	f8 94       	cli
+ 328:	de bf       	out	0x3e, r29	; 62
+ 32a:	0f be       	out	0x3f, r0	; 63
+ 32c:	cd bf       	out	0x3d, r28	; 61
+ 32e:	df 91       	pop	r29
+ 330:	cf 91       	pop	r28
+ 332:	1f 91       	pop	r17
+ 334:	0f 91       	pop	r16
+ 336:	ff 90       	pop	r15
+ 338:	ef 90       	pop	r14
+ 33a:	08 95       	ret
 
-00000556 <UART_TransmitChar>:
+0000033c <UART_TransmitChar>:
 
 UART_STATUS_t UART_TransmitChar(uint16_t data)
 {
 	while (! (READ_BIT(UCSRA, UDRE)));
- 556:	5d 9b       	sbis	0x0b, 5	; 11
- 558:	fe cf       	rjmp	.-4      	; 0x556 <UART_TransmitChar>
+ 33c:	5d 9b       	sbis	0x0b, 5	; 11
+ 33e:	fe cf       	rjmp	.-4      	; 0x33c <UART_TransmitChar>
 	if (g_ST_UART_CONFIG_t.CHAR_BITS == UART_9_Bit_CHAR)
- 55a:	20 91 93 00 	lds	r18, 0x0093	; 0x800093 <__data_end+0x7>
- 55e:	24 30       	cpi	r18, 0x04	; 4
- 560:	21 f4       	brne	.+8      	; 0x56a <UART_TransmitChar+0x14>
+ 340:	20 91 bd 00 	lds	r18, 0x00BD	; 0x8000bd <__data_end+0x7>
+ 344:	24 30       	cpi	r18, 0x04	; 4
+ 346:	21 f4       	brne	.+8      	; 0x350 <UART_TransmitChar+0x14>
 	{
 		UCSRB |= ((data >> 8) & 1);
- 562:	2a b1       	in	r18, 0x0a	; 10
- 564:	91 70       	andi	r25, 0x01	; 1
- 566:	92 2b       	or	r25, r18
- 568:	9a b9       	out	0x0a, r25	; 10
+ 348:	2a b1       	in	r18, 0x0a	; 10
+ 34a:	91 70       	andi	r25, 0x01	; 1
+ 34c:	92 2b       	or	r25, r18
+ 34e:	9a b9       	out	0x0a, r25	; 10
 	}
 	/* Put data into buffer, sends the data */
 	UDR = data;
- 56a:	8c b9       	out	0x0c, r24	; 12
+ 350:	8c b9       	out	0x0c, r24	; 12
 	return UART_SUCCESS;
 }
- 56c:	80 e0       	ldi	r24, 0x00	; 0
- 56e:	08 95       	ret
+ 352:	80 e0       	ldi	r24, 0x00	; 0
+ 354:	08 95       	ret
 
-00000570 <UART_TransmitString>:
+00000356 <UART_TransmitString>:
 
 UART_STATUS_t UART_TransmitString(uint8_t *data)
 {
- 570:	0f 93       	push	r16
- 572:	1f 93       	push	r17
- 574:	cf 93       	push	r28
- 576:	8c 01       	movw	r16, r24
+ 356:	0f 93       	push	r16
+ 358:	1f 93       	push	r17
+ 35a:	cf 93       	push	r28
+ 35c:	8c 01       	movw	r16, r24
 	uint8_t j = STRING_START;
- 578:	c0 e0       	ldi	r28, 0x00	; 0
+ 35e:	c0 e0       	ldi	r28, 0x00	; 0
 	
 	while (data[j]!= STRING_END)		/* Send string till null */
- 57a:	04 c0       	rjmp	.+8      	; 0x584 <UART_TransmitString+0x14>
+ 360:	04 c0       	rjmp	.+8      	; 0x36a <UART_TransmitString+0x14>
 	{
 		UART_TransmitChar(data[j]);
- 57c:	90 e0       	ldi	r25, 0x00	; 0
- 57e:	0e 94 ab 02 	call	0x556	; 0x556 <UART_TransmitChar>
+ 362:	90 e0       	ldi	r25, 0x00	; 0
+ 364:	0e 94 9e 01 	call	0x33c	; 0x33c <UART_TransmitChar>
 		j++;
- 582:	cf 5f       	subi	r28, 0xFF	; 255
+ 368:	cf 5f       	subi	r28, 0xFF	; 255
 
 UART_STATUS_t UART_TransmitString(uint8_t *data)
 {
 	uint8_t j = STRING_START;
 	
 	while (data[j]!= STRING_END)		/* Send string till null */
- 584:	f8 01       	movw	r30, r16
- 586:	ec 0f       	add	r30, r28
- 588:	f1 1d       	adc	r31, r1
- 58a:	80 81       	ld	r24, Z
- 58c:	81 11       	cpse	r24, r1
- 58e:	f6 cf       	rjmp	.-20     	; 0x57c <UART_TransmitString+0xc>
+ 36a:	f8 01       	movw	r30, r16
+ 36c:	ec 0f       	add	r30, r28
+ 36e:	f1 1d       	adc	r31, r1
+ 370:	80 81       	ld	r24, Z
+ 372:	81 11       	cpse	r24, r1
+ 374:	f6 cf       	rjmp	.-20     	; 0x362 <UART_TransmitString+0xc>
 	{
 		UART_TransmitChar(data[j]);
 		j++;
 	}
 	data[j] = STRING_END;
- 590:	10 82       	st	Z, r1
+ 376:	10 82       	st	Z, r1
 	return UART_SUCCESS;
 }
- 592:	cf 91       	pop	r28
- 594:	1f 91       	pop	r17
- 596:	0f 91       	pop	r16
- 598:	08 95       	ret
+ 378:	cf 91       	pop	r28
+ 37a:	1f 91       	pop	r17
+ 37c:	0f 91       	pop	r16
+ 37e:	08 95       	ret
 
-0000059a <UART_RecieveChar>:
+00000380 <UART_RecieveChar>:
 
 UART_STATUS_t UART_RecieveChar(uint16_t * character)
 {
- 59a:	fc 01       	movw	r30, r24
+ 380:	fc 01       	movw	r30, r24
 	while (! (READ_BIT(UCSRA, RXC)));
- 59c:	5f 9b       	sbis	0x0b, 7	; 11
- 59e:	fe cf       	rjmp	.-4      	; 0x59c <UART_RecieveChar+0x2>
+ 382:	5f 9b       	sbis	0x0b, 7	; 11
+ 384:	fe cf       	rjmp	.-4      	; 0x382 <UART_RecieveChar+0x2>
 	if (g_ST_UART_CONFIG_t.CHAR_BITS == UART_9_Bit_CHAR)
- 5a0:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <__data_end+0x7>
- 5a4:	84 30       	cpi	r24, 0x04	; 4
- 5a6:	79 f4       	brne	.+30     	; 0x5c6 <UART_RecieveChar+0x2c>
+ 386:	80 91 bd 00 	lds	r24, 0x00BD	; 0x8000bd <__data_end+0x7>
+ 38a:	84 30       	cpi	r24, 0x04	; 4
+ 38c:	79 f4       	brne	.+30     	; 0x3ac <UART_RecieveChar+0x2c>
 	{
 		while ((UCSRA) & ((1<<FE)|(1<<DOR)|(1<<PE)));
- 5a8:	9b b1       	in	r25, 0x0b	; 11
- 5aa:	9c 71       	andi	r25, 0x1C	; 28
- 5ac:	e9 f7       	brne	.-6      	; 0x5a8 <UART_RecieveChar+0xe>
+ 38e:	9b b1       	in	r25, 0x0b	; 11
+ 390:	9c 71       	andi	r25, 0x1C	; 28
+ 392:	e9 f7       	brne	.-6      	; 0x38e <UART_RecieveChar+0xe>
 		UCSRB = (UCSRB >> 1) & 0x01;
- 5ae:	8a b1       	in	r24, 0x0a	; 10
- 5b0:	86 95       	lsr	r24
- 5b2:	81 70       	andi	r24, 0x01	; 1
- 5b4:	8a b9       	out	0x0a, r24	; 10
+ 394:	8a b1       	in	r24, 0x0a	; 10
+ 396:	86 95       	lsr	r24
+ 398:	81 70       	andi	r24, 0x01	; 1
+ 39a:	8a b9       	out	0x0a, r24	; 10
 		*character = ((UCSRB << 8) | UDR);
- 5b6:	2a b1       	in	r18, 0x0a	; 10
- 5b8:	30 e0       	ldi	r19, 0x00	; 0
- 5ba:	32 2f       	mov	r19, r18
- 5bc:	22 27       	eor	r18, r18
- 5be:	8c b1       	in	r24, 0x0c	; 12
- 5c0:	28 2b       	or	r18, r24
- 5c2:	31 83       	std	Z+1, r19	; 0x01
- 5c4:	20 83       	st	Z, r18
+ 39c:	2a b1       	in	r18, 0x0a	; 10
+ 39e:	30 e0       	ldi	r19, 0x00	; 0
+ 3a0:	32 2f       	mov	r19, r18
+ 3a2:	22 27       	eor	r18, r18
+ 3a4:	8c b1       	in	r24, 0x0c	; 12
+ 3a6:	28 2b       	or	r18, r24
+ 3a8:	31 83       	std	Z+1, r19	; 0x01
+ 3aa:	20 83       	st	Z, r18
 	}
 	
 	*character =  UDR;				/* Return the byte*/
- 5c6:	2c b1       	in	r18, 0x0c	; 12
- 5c8:	30 e0       	ldi	r19, 0x00	; 0
- 5ca:	31 83       	std	Z+1, r19	; 0x01
- 5cc:	20 83       	st	Z, r18
+ 3ac:	2c b1       	in	r18, 0x0c	; 12
+ 3ae:	30 e0       	ldi	r19, 0x00	; 0
+ 3b0:	31 83       	std	Z+1, r19	; 0x01
+ 3b2:	20 83       	st	Z, r18
 	return UART_SUCCESS;
 }
- 5ce:	80 e0       	ldi	r24, 0x00	; 0
- 5d0:	08 95       	ret
+ 3b4:	80 e0       	ldi	r24, 0x00	; 0
+ 3b6:	08 95       	ret
 
-000005d2 <UART_RecieveString>:
+000003b8 <UART_RecieveString>:
 
 UART_STATUS_t UART_RecieveString(uint8_t *data)
 {
- 5d2:	ac 01       	movw	r20, r24
+ 3b8:	ac 01       	movw	r20, r24
 	uint8_t i = 0;
- 5d4:	20 e0       	ldi	r18, 0x00	; 0
+ 3ba:	20 e0       	ldi	r18, 0x00	; 0
 	
 	while (1) {
 		uint8_t c;
 		// wait for another char
 		while (! (READ_BIT(UCSRA, RXC)));
- 5d6:	5f 9b       	sbis	0x0b, 7	; 11
- 5d8:	fe cf       	rjmp	.-4      	; 0x5d6 <UART_RecieveString+0x4>
+ 3bc:	5f 9b       	sbis	0x0b, 7	; 11
+ 3be:	fe cf       	rjmp	.-4      	; 0x3bc <UART_RecieveString+0x4>
 		c = (uint8_t)UDR;
- 5da:	9c b1       	in	r25, 0x0c	; 12
+ 3c0:	9c b1       	in	r25, 0x0c	; 12
 		// break on NULL character or new line
 		// when backspace
 		if ((c == STRING_END) || (c == NEW_LINE)) break;
- 5dc:	99 23       	and	r25, r25
- 5de:	71 f0       	breq	.+28     	; 0x5fc <UART_RecieveString+0x2a>
- 5e0:	9d 30       	cpi	r25, 0x0D	; 13
- 5e2:	61 f0       	breq	.+24     	; 0x5fc <UART_RecieveString+0x2a>
+ 3c2:	99 23       	and	r25, r25
+ 3c4:	71 f0       	breq	.+28     	; 0x3e2 <UART_RecieveString+0x2a>
+ 3c6:	9d 30       	cpi	r25, 0x0D	; 13
+ 3c8:	61 f0       	breq	.+24     	; 0x3e2 <UART_RecieveString+0x2a>
 		else if (c == BACKSPACE)
- 5e4:	98 30       	cpi	r25, 0x08	; 8
- 5e6:	21 f4       	brne	.+8      	; 0x5f0 <UART_RecieveString+0x1e>
+ 3ca:	98 30       	cpi	r25, 0x08	; 8
+ 3cc:	21 f4       	brne	.+8      	; 0x3d6 <UART_RecieveString+0x1e>
 		{
 			if (i != 0)
- 5e8:	22 23       	and	r18, r18
- 5ea:	a9 f3       	breq	.-22     	; 0x5d6 <UART_RecieveString+0x4>
+ 3ce:	22 23       	and	r18, r18
+ 3d0:	a9 f3       	breq	.-22     	; 0x3bc <UART_RecieveString+0x4>
 			{
 				i--;
- 5ec:	21 50       	subi	r18, 0x01	; 1
+ 3d2:	21 50       	subi	r18, 0x01	; 1
 			}
 			continue;
- 5ee:	f3 cf       	rjmp	.-26     	; 0x5d6 <UART_RecieveString+0x4>
+ 3d4:	f3 cf       	rjmp	.-26     	; 0x3bc <UART_RecieveString+0x4>
 		}
 		// write into the supplied buffer
 		data[i] =  (uint8_t)c;
- 5f0:	fa 01       	movw	r30, r20
- 5f2:	e2 0f       	add	r30, r18
- 5f4:	f1 1d       	adc	r31, r1
- 5f6:	90 83       	st	Z, r25
+ 3d6:	fa 01       	movw	r30, r20
+ 3d8:	e2 0f       	add	r30, r18
+ 3da:	f1 1d       	adc	r31, r1
+ 3dc:	90 83       	st	Z, r25
 		i++;
- 5f8:	2f 5f       	subi	r18, 0xFF	; 255
- 5fa:	ed cf       	rjmp	.-38     	; 0x5d6 <UART_RecieveString+0x4>
+ 3de:	2f 5f       	subi	r18, 0xFF	; 255
+ 3e0:	ed cf       	rjmp	.-38     	; 0x3bc <UART_RecieveString+0x4>
 	}
 	data[i] = STRING_END;
- 5fc:	fa 01       	movw	r30, r20
- 5fe:	e2 0f       	add	r30, r18
- 600:	f1 1d       	adc	r31, r1
- 602:	10 82       	st	Z, r1
+ 3e2:	fa 01       	movw	r30, r20
+ 3e4:	e2 0f       	add	r30, r18
+ 3e6:	f1 1d       	adc	r31, r1
+ 3e8:	10 82       	st	Z, r1
 	//return the received string
 	return UART_SUCCESS;
 }
- 604:	80 e0       	ldi	r24, 0x00	; 0
- 606:	08 95       	ret
+ 3ea:	80 e0       	ldi	r24, 0x00	; 0
+ 3ec:	08 95       	ret
 
-00000608 <__udivmodsi4>:
- 608:	a1 e2       	ldi	r26, 0x21	; 33
- 60a:	1a 2e       	mov	r1, r26
- 60c:	aa 1b       	sub	r26, r26
- 60e:	bb 1b       	sub	r27, r27
- 610:	fd 01       	movw	r30, r26
- 612:	0d c0       	rjmp	.+26     	; 0x62e <__udivmodsi4_ep>
+000003ee <__udivmodsi4>:
+ 3ee:	a1 e2       	ldi	r26, 0x21	; 33
+ 3f0:	1a 2e       	mov	r1, r26
+ 3f2:	aa 1b       	sub	r26, r26
+ 3f4:	bb 1b       	sub	r27, r27
+ 3f6:	fd 01       	movw	r30, r26
+ 3f8:	0d c0       	rjmp	.+26     	; 0x414 <__udivmodsi4_ep>
 
-00000614 <__udivmodsi4_loop>:
- 614:	aa 1f       	adc	r26, r26
- 616:	bb 1f       	adc	r27, r27
- 618:	ee 1f       	adc	r30, r30
- 61a:	ff 1f       	adc	r31, r31
- 61c:	a2 17       	cp	r26, r18
- 61e:	b3 07       	cpc	r27, r19
- 620:	e4 07       	cpc	r30, r20
- 622:	f5 07       	cpc	r31, r21
- 624:	20 f0       	brcs	.+8      	; 0x62e <__udivmodsi4_ep>
- 626:	a2 1b       	sub	r26, r18
- 628:	b3 0b       	sbc	r27, r19
- 62a:	e4 0b       	sbc	r30, r20
- 62c:	f5 0b       	sbc	r31, r21
+000003fa <__udivmodsi4_loop>:
+ 3fa:	aa 1f       	adc	r26, r26
+ 3fc:	bb 1f       	adc	r27, r27
+ 3fe:	ee 1f       	adc	r30, r30
+ 400:	ff 1f       	adc	r31, r31
+ 402:	a2 17       	cp	r26, r18
+ 404:	b3 07       	cpc	r27, r19
+ 406:	e4 07       	cpc	r30, r20
+ 408:	f5 07       	cpc	r31, r21
+ 40a:	20 f0       	brcs	.+8      	; 0x414 <__udivmodsi4_ep>
+ 40c:	a2 1b       	sub	r26, r18
+ 40e:	b3 0b       	sbc	r27, r19
+ 410:	e4 0b       	sbc	r30, r20
+ 412:	f5 0b       	sbc	r31, r21
 
-0000062e <__udivmodsi4_ep>:
- 62e:	66 1f       	adc	r22, r22
- 630:	77 1f       	adc	r23, r23
- 632:	88 1f       	adc	r24, r24
- 634:	99 1f       	adc	r25, r25
- 636:	1a 94       	dec	r1
- 638:	69 f7       	brne	.-38     	; 0x614 <__udivmodsi4_loop>
- 63a:	60 95       	com	r22
- 63c:	70 95       	com	r23
- 63e:	80 95       	com	r24
- 640:	90 95       	com	r25
- 642:	9b 01       	movw	r18, r22
- 644:	ac 01       	movw	r20, r24
- 646:	bd 01       	movw	r22, r26
- 648:	cf 01       	movw	r24, r30
- 64a:	08 95       	ret
+00000414 <__udivmodsi4_ep>:
+ 414:	66 1f       	adc	r22, r22
+ 416:	77 1f       	adc	r23, r23
+ 418:	88 1f       	adc	r24, r24
+ 41a:	99 1f       	adc	r25, r25
+ 41c:	1a 94       	dec	r1
+ 41e:	69 f7       	brne	.-38     	; 0x3fa <__udivmodsi4_loop>
+ 420:	60 95       	com	r22
+ 422:	70 95       	com	r23
+ 424:	80 95       	com	r24
+ 426:	90 95       	com	r25
+ 428:	9b 01       	movw	r18, r22
+ 42a:	ac 01       	movw	r20, r24
+ 42c:	bd 01       	movw	r22, r26
+ 42e:	cf 01       	movw	r24, r30
+ 430:	08 95       	ret
 
-0000064c <_exit>:
- 64c:	f8 94       	cli
+00000432 <_exit>:
+ 432:	f8 94       	cli
 
-0000064e <__stop_program>:
- 64e:	ff cf       	rjmp	.-2      	; 0x64e <__stop_program>
+00000434 <__stop_program>:
+ 434:	ff cf       	rjmp	.-2      	; 0x434 <__stop_program>
