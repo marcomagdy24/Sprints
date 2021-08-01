@@ -1,0 +1,19 @@
+/*
+ * spiConfig.c
+ *
+ * Created: 7/15/2021 2:53:14 PM
+ *  Author: Marco
+ */ 
+
+#include "spiConfig.h"
+
+ST_SPI_CONFIG_t config = {
+	SPI_MASTER_MODE,
+	SPI_NORMAL_SPEED,
+	SPI_Fosc_4,
+	SPI_CLOCK_POLARITY_RISING ,
+	SPI_CLOCK_PHASE_SAMPLE,
+	SPI_MSB_FIRST,
+	SPI_RECIEVE_ENABLE,
+	SPI_RECIEVER_INT_DISABLE,
+};
