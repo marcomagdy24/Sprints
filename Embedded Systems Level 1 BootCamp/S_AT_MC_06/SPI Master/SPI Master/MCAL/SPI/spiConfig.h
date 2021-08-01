@@ -1,0 +1,27 @@
+/*
+ * spiConfig.h
+ *
+ * Created: 7/13/2021 8:58:57 PM
+ *  Author: Marco
+ */ 
+
+
+#ifndef SPICONFIG_H_
+#define SPICONFIG_H_
+
+typedef struct
+{
+	
+	EN_SPI_MASTER_SLAVE_t		 MASTER_SLAVE_MODE;
+	EN_SPI_SPEED_t					 SPI_SPEED;
+	EN_SPI_PRESCALAR_t			 PRESCALAR;
+	EN_SPI_CLOCK_POLARITY_t		 CLOCK_POLARITY ;
+	EN_SPI_CLOCK_PHASE_t			 CLOCK_PHASE;
+	EN_SPI_DATA_ORDER_t			 DATA_ORDER;
+	EN_SPI_RECIEVE_t	          RECIEVE;
+	EN_SPI_RECIEVE_INT_t	       RECIEVER_INT;
+} ST_SPI_CONFIG_t;
+
+
+
+#endif /* SPICONFIG_H_ */
