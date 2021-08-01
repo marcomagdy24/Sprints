@@ -70,7 +70,7 @@ EN_transStat_t checkPANFromServer(ST_transaction * data) {
 			}
 
 			 else {
-				flag = 0;
+				flag = DECLINED;
 				break;
 			}
 			j++;
