@@ -43,7 +43,8 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../main.c \
 ../MCAL/DIO/dio.c \
-../MCAL/UART/uart.c
+../MCAL/UART/uart.c \
+../MCAL/UART/uartConfig.c
 
 
 PREPROCESSING_SRCS += 
@@ -55,22 +56,26 @@ ASM_SRCS +=
 OBJS +=  \
 main.o \
 MCAL/DIO/dio.o \
-MCAL/UART/uart.o
+MCAL/UART/uart.o \
+MCAL/UART/uartConfig.o
 
 OBJS_AS_ARGS +=  \
 main.o \
 MCAL/DIO/dio.o \
-MCAL/UART/uart.o
+MCAL/UART/uart.o \
+MCAL/UART/uartConfig.o
 
 C_DEPS +=  \
 main.d \
 MCAL/DIO/dio.d \
-MCAL/UART/uart.d
+MCAL/UART/uart.d \
+MCAL/UART/uartConfig.d
 
 C_DEPS_AS_ARGS +=  \
 main.d \
 MCAL/DIO/dio.d \
-MCAL/UART/uart.d
+MCAL/UART/uart.d \
+MCAL/UART/uartConfig.d
 
 OUTPUT_FILE_PATH +=UART_APP.elf
 
@@ -101,6 +106,13 @@ MCAL/DIO/dio.o: ../MCAL/DIO/dio.c
 	
 
 MCAL/UART/uart.o: ../MCAL/UART/uart.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/UART/uartConfig.o: ../MCAL/UART/uartConfig.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

@@ -48,6 +48,12 @@ Discarded input sections
  .text          0x00000000        0x0 MCAL/UART/uart.o
  .data          0x00000000        0x0 MCAL/UART/uart.o
  .bss           0x00000000        0x0 MCAL/UART/uart.o
+ .text          0x00000000        0x0 MCAL/UART/uartConfig.o
+ .data          0x00000000        0x0 MCAL/UART/uartConfig.o
+ .bss           0x00000000        0x0 MCAL/UART/uartConfig.o
+ .debug_line    0x00000000        0x0 MCAL/UART/uartConfig.o
+ .debug_str     0x00000000      0x11d MCAL/UART/uartConfig.o
+ .comment       0x00000000       0x31 MCAL/UART/uartConfig.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodsi4.o)
@@ -129,6 +135,7 @@ LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/
 LOAD main.o
 LOAD MCAL/DIO/dio.o
 LOAD MCAL/UART/uart.o
+LOAD MCAL/UART/uartConfig.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP

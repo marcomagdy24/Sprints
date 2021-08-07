@@ -8,3 +8,5 @@ MCAL\DIO\dio.c
 
 MCAL\UART\uart.c
 
+MCAL\UART\uartConfig.c
+

@@ -147,6 +147,9 @@
     <Compile Include="MCAL\UART\uart.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\UART\uartConfig.c">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\UART\uartConfig.h">
       <SubType>compile</SubType>
     </Compile>

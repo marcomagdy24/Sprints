@@ -102,7 +102,6 @@ typedef struct
 	EN_UART_TRANSMITER_INT_t TRANSMITER_INT;
 	EN_UART_RECIEVE_INT_t	 RECIEVE_INT;
 } ST_UART_CONFIG_t;
-
 /******************************************************************************
 *                               FUNCTION DECLARATIONS                         *
 *******************************************************************************/
