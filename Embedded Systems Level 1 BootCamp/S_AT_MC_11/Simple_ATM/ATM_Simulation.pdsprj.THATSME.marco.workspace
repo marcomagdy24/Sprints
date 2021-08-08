@@ -245,12 +245,6 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="972" flags="00000023" y="292" h="250" pid="0" iid="18">
-    <PROPERTIES>
-     <ITEM name="HSplitter1Pos">125</ITEM>
-     <ITEM name="VSplitter1Pos">298</ITEM>
-    </PROPERTIES>
-   </POPUP>
   </PWI>
  </MODULE>
 </WORKSPACE>

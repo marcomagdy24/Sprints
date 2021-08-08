@@ -20,17 +20,13 @@ App/User/User.d App/User/User.o: ../App/User/User.c ../App/User/User.h \
  ../App/User/../../Mcal/ADC/../../Infrastructure/Macros.h \
  ../App/User/../../Mcal/ADC/../../Infrastructure/STD_types.h \
  ../App/User/../../Mcal/ADC/adcConfig.h \
- ../App/User/../../Firmware/EEPROM/EEPROM.h \
- ../App/User/../../Firmware/EEPROM/../../Infrastructure/utils.h \
- ../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C.h \
- ../App/User/../../Firmware/EEPROM/../../Mcal/I2C/../../Infrastructure/STD_types.h \
- ../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C_Registers.h \
- ../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C_retval.h \
- ../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C_Config.h \
+ ../App/User/../../Firmware/EEPROM/EEPROM.h ../Infrastructure/utils.h \
+ ../Mcal/I2C/I2C.h ../Infrastructure/STD_types.h \
+ ../Mcal/I2C/I2C_Registers.h ../Mcal/I2C/I2C_retval.h \
+ ../Mcal/I2C/I2C_Config.h \
  ../App/User/../../Firmware/EEPROM/EEPROM_retval.h \
  ../App/User/../../Firmware/EEPROM/../../Infrastructure/STD_types.h \
- ../App/User/../../Firmware/EEPROM/EEPROM_Config.h \
- ../App/User/../../Firmware/EEPROM/../../Mcal/UART/uart.h \
+ ../App/User/../../Firmware/EEPROM/EEPROM_Config.h ../Mcal/UART/uart.h \
  ../App/User/../../Firmware/Motor/motor.h \
  ../App/User/../../Firmware/Motor/motorConfig.h \
  ../App/User/../../Firmware/Motor/../../MCAL/DIO/DIO.h \
@@ -106,17 +102,17 @@ App/User/User.d App/User/User.o: ../App/User/User.c ../App/User/User.h \
 
 ../App/User/../../Firmware/EEPROM/EEPROM.h:
 
-../App/User/../../Firmware/EEPROM/../../Infrastructure/utils.h:
+../Infrastructure/utils.h:
 
-../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C.h:
+../Mcal/I2C/I2C.h:
 
-../App/User/../../Firmware/EEPROM/../../Mcal/I2C/../../Infrastructure/STD_types.h:
+../Infrastructure/STD_types.h:
 
-../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C_Registers.h:
+../Mcal/I2C/I2C_Registers.h:
 
-../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C_retval.h:
+../Mcal/I2C/I2C_retval.h:
 
-../App/User/../../Firmware/EEPROM/../../Mcal/I2C/I2C_Config.h:
+../Mcal/I2C/I2C_Config.h:
 
 ../App/User/../../Firmware/EEPROM/EEPROM_retval.h:
 
@@ -124,7 +120,7 @@ App/User/User.d App/User/User.o: ../App/User/User.c ../App/User/User.h \
 
 ../App/User/../../Firmware/EEPROM/EEPROM_Config.h:
 
-../App/User/../../Firmware/EEPROM/../../Mcal/UART/uart.h:
+../Mcal/UART/uart.h:
 
 ../App/User/../../Firmware/Motor/motor.h:
 

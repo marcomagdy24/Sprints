@@ -3,7 +3,7 @@
  *
  * Created: 7/16/2021 9:32:00 AM
  *  Author: Mohamed Wagdy
- */ 
+ */
 
 
 #ifndef __I2C_H__
