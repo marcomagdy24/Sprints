@@ -15,11 +15,10 @@ int checkDraw(char board[][SIDE]) {
 	int checkCondition = cont;
 	for (int i = 0; i < SIDE; i++) {
 		for (int j = 0; j < SIDE; j++) {
-			if (board[i][j] == ' ') {
+			if (board[i][j] == ' ')
 				return cont;
-			} else {
+			else
 				checkCondition = draw;
-			}
 		}
 	}
 	return checkCondition;
