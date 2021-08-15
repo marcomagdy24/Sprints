@@ -1,0 +1,14 @@
+﻿  lcd.c
+  lcd_Config.c
+  utils.c
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\UTILS\utils.c(129,26): warning C4244: 'function': conversion from 'uint32_t' to 'uint8_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\UTILS\utils.c(131,20): warning C4244: 'return': conversion from 'uint32_t' to 'uint8_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\UTILS\utils.c(152,38): warning C4244: '=': conversion from 'double' to 'float32_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\UTILS\utils.c(173,51): warning C4244: '=': conversion from 'double' to 'float32_t', possible loss of data
+  STUB_DIO.c
+  Testcases.c
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\ECUAL\LCD\LCD\Testcases.c(73,44): warning C4047: 'function': 'uint8_t *' differs in levels of indirection from 'uint8_t (*)[7]'
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\ECUAL\LCD\LCD\Testcases.c(73,39): warning C4024: 'LCD_WRITE_STRING': different types for formal and actual parameter 1
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\ECUAL\LCD\LCD\Testcases.c(91,45): warning C4244: 'function': conversion from 'long' to 'float32_t', possible loss of data
+  Generating Code...
+  LCD.vcxproj -> M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\ECUAL\LCD\Debug\LCD.exe
