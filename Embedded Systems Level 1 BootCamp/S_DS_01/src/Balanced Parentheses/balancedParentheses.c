@@ -21,11 +21,11 @@ uint8_t *balancedParentheses(uint8_t *expression) {
 		if ((expression[exp_index] == '}') || (expression[exp_index] == ')')
 				|| (expression[exp_index] == ']')) {
 			if (head == NULL) {
-				printf("[Debug1] Not Balance\n");
+//				printf("[Debug1] Not Balance\n");
 				return Not_Balance ;
 			} else if (!(isMatching(pull(), expression[exp_index]))){
 				// *result = BALANCED;
-				printf("[Debug2] Not Balance\n");
+//				printf("[Debug2] Not Balance\n");
 				return Not_Balance ;
 			}
 		}
@@ -34,11 +34,11 @@ uint8_t *balancedParentheses(uint8_t *expression) {
 	}
 	if (head == NULL) {
 		// *result = BALANCED;
-		printf("[Debug3] Balance\n");
+//		printf("[Debug3] Balance\n");
 		return Balance ;
 	} else {
 		// *result = NOT_BALANCED;
-		printf("[Debug4] Not Balance\n");
+//		printf("[Debug4] Not Balance\n");
 		return Not_Balance ;
 	}
 }

@@ -22,8 +22,8 @@ void bubbleSort(uint32_t* arr, uint8_t size) {
 				swap(&arr[j], &arr[j + 1]);
 }
 
-int isSorted(uint32_t* arr, uint8_t size) {
-	sint8_t isSorted = -1;
+uint8_t isSorted(uint32_t* arr, uint8_t size) {
+	uint8_t isSorted = NOT_SORTED;
 	for (uint8_t i = 0; i < size - 1; i++) {
 		if (arr[i] < arr[i + 1])
 			isSorted = SORTED;
@@ -31,8 +31,7 @@ int isSorted(uint32_t* arr, uint8_t size) {
 			isSorted = NOT_SORTED;
 			break;
 		}
-//		printf("[DEBUG] Element is %ld\n", arr[i]);
-//		printf("[DEBUG] isSorted = %d\n", isSorted);
+
 	}
 	return isSorted;
 }
@@ -59,7 +58,7 @@ uint32_t* initializeSearch(uint32_t* arr, uint8_t size) {
 }
 
 signed int binarySearch(uint32_t* arr, uint8_t size, uint32_t number) {
-	signed int index = NOT_FOUND;
+	int index = NOT_FOUND;
 	sint16_t start = 0, end = size - 1;
 	sint16_t mid = (start + end) / 2;
 	arr = initializeSearch(arr, size);
