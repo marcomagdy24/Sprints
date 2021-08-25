@@ -1,0 +1,4 @@
+﻿  admin.c
+C:\Users\marco\Downloads\Simple_ATM1\Simple_ATM\ATM_ECU\ATM_ECU\ATM_ECU\App\Admin\admin.c(90,22): warning C4013: 'pow' undefined; assuming extern returning int
+C:\Users\marco\Downloads\Simple_ATM1\Simple_ATM\ATM_ECU\ATM_ECU\ATM_ECU\App\Admin\admin.c(121,53): warning C4244: '=': conversion from 'double' to 'f32_t', possible loss of data
+  ADMIN1.vcxproj -> C:\Users\marco\Downloads\Simple_ATM1\Simple_ATM\ATM_ECU\ATM_ECU\Unit Tests\App\ADMIN1\Debug\ADMIN1.exe

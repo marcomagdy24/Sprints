@@ -14,15 +14,6 @@
 #include "Binary Search/binary_search.h"
 
 int main(void) {
-//	uint32_t x[] = { 29, 10, 14, 37, 14, 20, 50, 12 };
-//	uint8_t n = sizeof(x) / sizeof(x[0]);
-//	sint8_t result = binarySearch(x, n, 12);
-//	uint32_t y[] = { 29, 10, 14, 37, 14, 11, 12, 50 };
-//	n = sizeof(y) / sizeof(y[0]);
-//	result = binarySearch(y, n, 12);
-//	uint32_t z[] = { 10, 13, 14, 15, 20, 25, 30 };
-//	n = sizeof(z) / sizeof(z[0]);
-//	result = binarySearch(z, n, 12);
 	uint32_t element, key;
 	uint8_t size;
 	int result;
@@ -46,5 +37,5 @@ int main(void) {
 	if (result == NOT_FOUND)
 		printf("[INFO] %ld is not Found", key);
 	else
-		printf("[INFO] %ld is first found at index %d", key, result);
+		printf("[INFO] %ld is first found at index %d in the Sorted array", key, result);
 }

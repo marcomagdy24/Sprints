@@ -13,21 +13,21 @@
 #include "xo game/xo.h"
 
 int main(void) {
-	int player = 1, i, choice;
+	int player = Player1, i, choice;
 	char board[SIDE][SIDE];
 	showInstructions();
 	initialize(board);
 	char mark;
 	do {
 		showBoard(board);
-		player = (player % 2) ? 1 : 2;
+		player = (player % 2) ? Player1 : Player2;
 
 		printf("Player %d, enter a number:  ", player);
 		fflush(stdout);
 		scanf("%d", &choice);
 		fflush(stdin);
 
-		mark = (player == 1) ? 'X' : 'O';
+		mark = (player == Player1) ? Player1x : Player2o;
 
 		if (choice == 1 && board[0][0] == ' ')
 			board[0][0] = mark;

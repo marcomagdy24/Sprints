@@ -1,0 +1,18 @@
+/*
+ * lcdConfig.c
+ *
+ * Created: 8/9/2021 9:45:54 PM
+ *  Author: Marco
+ */ 
+
+#include "lcd.h"
+
+ST_LCD_ConfigPINS gext_LCDConfig[LCD_PINS_NUMBER] = {
+	{DIO_PORTA,PIN_1,OUTPUT},
+	{DIO_PORTA,PIN_2,OUTPUT},
+	{DIO_PORTA,PIN_3,OUTPUT},
+	{DIO_PORTA,PIN_4,OUTPUT},
+	{DIO_PORTA,PIN_5,OUTPUT},
+	{DIO_PORTA,PIN_6,OUTPUT},
+	{DIO_PORTA,PIN_7,OUTPUT}
+};
