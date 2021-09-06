@@ -1,0 +1,20 @@
+﻿  PWM.c
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\MCAL\PWM\PWM.c(67,33): warning C4244: '=': conversion from 'double' to 'volatile uint8_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\MCAL\PWM\PWM.c(78,35): warning C4244: '=': conversion from 'double' to 'volatile uint8_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\MCAL\PWM\PWM.c(97,34): warning C4244: '=': conversion from 'double' to 'volatile uint8_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\MCAL\PWM\PWM.c(108,36): warning C4244: '=': conversion from 'double' to 'volatile uint8_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\MCAL\PWM\PWM.c(122,40): warning C4244: '=': conversion from 'double' to 'volatile uint8_t', possible loss of data
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Car\MCAL\PWM\PWM.c(133,42): warning C4244: '=': conversion from 'double' to 'volatile uint8_t', possible loss of data
+  PWM_MockRegisters.c
+  STUB_DIO.c
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(8,37): warning C4028: formal parameter 1 different from declaration
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(9,1): warning C4029: declared formal parameter list different from definition
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(13,38): warning C4028: formal parameter 1 different from declaration
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(14,1): warning C4029: declared formal parameter list different from definition
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(18,39): warning C4028: formal parameter 1 different from declaration
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(19,1): warning C4029: declared formal parameter list different from definition
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(23,39): warning C4028: formal parameter 1 different from declaration
+M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\PWM\STUB_DIO.c(24,1): warning C4029: declared formal parameter list different from definition
+  Testcases.c
+  Generating Code...
+  PWM.vcxproj -> M:\Sprints\Sprints Stable\Drivers\Car Control\Car\Unit Tests\MCAL\Atmega32\PWM\Debug\PWM.exe

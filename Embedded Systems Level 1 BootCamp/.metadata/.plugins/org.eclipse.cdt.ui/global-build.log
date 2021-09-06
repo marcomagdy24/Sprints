@@ -539,3 +539,140 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c"
 gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
 Info: Nothing to build for S_DS_01
 Info: Nothing to build for S_DS_01
+00:18:51 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+00:50:28 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:22:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:22:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+00:50:38 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+00:51:26 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%u' expects argument of type 'unsigned int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%ud", &size);
+         ~^    ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%u' expects argument of type 'unsigned int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+00:51:33 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%u' expects argument of type 'unsigned int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%u", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%u' expects argument of type 'unsigned int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+00:51:36 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:11: warning: format '%ld' expects argument of type 'long int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%ld", &size);
+         ~~^   ~~~~~
+..\src\S_ALGO_01.c:31:11: warning: format '%ld' expects argument of type 'long int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+00:51:40 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+00:55:05 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+00:55:35 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:31:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+00:57:44 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_ALGO_01.o" "..\\src\\S_ALGO_01.c" 
+..\src\S_ALGO_01.c: In function 'main':
+..\src\S_ALGO_01.c:22:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+  scanf("%d", &size);
+         ~^   ~~~~~
+..\src\S_ALGO_01.c:22:10: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'uint8_t *' {aka 'unsigned char *'} [-Wformat=]
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+01:25:01 **** Incremental Build of configuration Debug for project S_ALGO_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Binary Search\\binary_search.o" "..\\src\\Binary Search\\binary_search.c" 
+gcc -o S_ALGO_01.exe "src\\Binary Search\\binary_search.o" "src\\S_ALGO_01.o" 
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+Info: Nothing to build for S_ALGO_01
+01:52:34 **** Rebuild of configuration Debug for project S_CP_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_CP_01.o" "..\\src\\S_CP_01.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\xo game\\xo.o" "..\\src\\xo game\\xo.c" 
+gcc -o S_CP_01.exe "src\\S_CP_01.o" "src\\xo game\\xo.o" 
+Info: Nothing to build for S_CP_01
+01:53:29 **** Incremental Build of configuration Debug for project S_CP_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_CP_01.o" "..\\src\\S_CP_01.c" 
+gcc -o S_CP_01.exe "src\\S_CP_01.o" "src\\xo game\\xo.o" 
+01:54:22 **** Incremental Build of configuration Debug for project S_CP_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_CP_01.o" "..\\src\\S_CP_01.c" 
+gcc -o S_CP_01.exe "src\\S_CP_01.o" "src\\xo game\\xo.o" 
+Info: Nothing to build for S_CP_01
+Info: Nothing to build for S_CP_01
+03:38:43 **** Rebuild of configuration Debug for project S_CPP_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_CPP_01.o" "..\\src\\S_CPP_01.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Payment\\Payment.o" "..\\src\\Payment\\Payment.c" 
+gcc -o S_CPP_01.exe "src\\Payment\\Payment.o" "src\\S_CPP_01.o" 
+Info: Nothing to build for S_CPP_01
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_DS_01
+Info: Nothing to build for S_DS_01
+03:51:53 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Balanced Parentheses\\balancedParentheses.o" "..\\src\\Balanced Parentheses\\balancedParentheses.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
+03:55:49 **** Incremental Build of configuration Debug for project S_DS_01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\S_DS_01.o" "..\\src\\S_DS_01.c" 
+gcc -o S_DS_01.exe "src\\Balanced Parentheses\\balancedParentheses.o" "src\\S_DS_01.o" "src\\Stack\\stack.o" 
+Info: Nothing to build for S_DS_01
