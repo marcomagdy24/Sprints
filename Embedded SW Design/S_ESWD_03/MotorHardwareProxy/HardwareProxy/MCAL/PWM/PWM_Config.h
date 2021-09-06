@@ -1,0 +1,50 @@
+/*
+* PWMConfig.h
+*
+* Created: 8/10/2021 12:10:22 AM
+*  Author: Marco
+*/
+
+
+#ifndef  PWM_CONFIG_H
+#define  PWM_CONFIG_H
+
+#include "../../MCAL/DIO/dio.h"
+
+
+/******************************************************************************
+*                              CONFIGS										  *
+*******************************************************************************/
+/*TIMERS MODES*/
+/*
+	PWM_MODE_PHASECORRECTPWM
+	PWM_MODE_FASTPWM
+*/
+#define PWM_TIMER0_MODE				PWM_MODE_FASTPWM
+#define PWM_TIMER2_MODE				PWM_MODE_FASTPWM
+
+/*TIMERS PRESCALLER*/
+/*
+	PWM_PRESCALLER_DIV_STOPPED
+	PWM_PRESCALLER_DIV_1
+	PWM_PRESCALLER_DIV_8
+	PWM_PRESCALLER_DIV_64
+	PWM_PRESCALLER_DIV_256
+	PWM_PRESCALLER_DIV_1024
+	PWM_PRESCALLER_DIV_FALLING_EDGE
+	PWM_PRESCALLER_DIV_RISING_EDGE
+*/
+#define PWM_TIMER0_PRESCALER		PWM_PRESCALLER_DIV_1
+#define PWM_TIMER2_PRESCALER		PWM_PRESCALLER_DIV_1
+
+/*TIMERS PRESCALLER*/
+/*
+	PWM_OC0_DISCONNECTED_MODE
+	PWM_OC0_NONINVERTING_MODE
+	PWM_OC0_INVERTING_MODE
+*/
+#define PWM_TIMER0_OC0_MODE			PWM_OC0_NONINVERTING_MODE
+#define PWM_TIMER2_OC0_MODE			PWM_OC0_NONINVERTING_MODE
+
+
+#endif /* PWM_CONFIG_H */
